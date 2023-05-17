@@ -7,19 +7,37 @@
         {
             "name": "weatherapp",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+            "args": [
+                "--dart-define", "SENTRY_ENABLED=false",
+                "--dart-define", "SENTRY_URL=false",
+                "--dart-define", "MOCKING=false",
+                "--dart-define", "OPEN_METEO_BASE_URL=https://api.open-meteo.com",
+            ]
         },
         {
             "name": "weatherapp (profile mode)",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "profile"
+            "flutterMode": "profile",
+            "args": [
+                "--dart-define", "SENTRY_ENABLED=false",
+                "--dart-define", "SENTRY_URL=false",
+                "--dart-define", "MOCKING=false",
+                "--dart-define", "OPEN_METEO_BASE_URL=https://api.open-meteo.com",
+            ]
         },
         {
             "name": "weatherapp (release mode)",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "release"
+            "flutterMode": "release",
+            "args": [
+                "--dart-define", "SENTRY_ENABLED=false",
+                "--dart-define", "SENTRY_URL=false",
+                "--dart-define", "MOCKING=false",
+                "--dart-define", "OPEN_METEO_BASE_URL=https://api.open-meteo.com",
+            ]
         }
     ]
 }
