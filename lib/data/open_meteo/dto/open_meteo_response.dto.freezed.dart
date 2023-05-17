@@ -21,7 +21,7 @@ OpenMeteoResponseDto _$OpenMeteoResponseDtoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$OpenMeteoResponseDto {
   double get latitude => throw _privateConstructorUsedError;
-  double get longitute => throw _privateConstructorUsedError;
+  double get longitude => throw _privateConstructorUsedError;
   @JsonKey(name: 'generationtime_ms')
   double get generationtimeMs => throw _privateConstructorUsedError;
   @JsonKey(name: 'utc_offset_seconds')
@@ -51,7 +51,7 @@ abstract class $OpenMeteoResponseDtoCopyWith<$Res> {
   @useResult
   $Res call(
       {double latitude,
-      double longitute,
+      double longitude,
       @JsonKey(name: 'generationtime_ms') double generationtimeMs,
       @JsonKey(name: 'utc_offset_seconds') int utcOffsetSeconds,
       String timezone,
@@ -83,7 +83,7 @@ class _$OpenMeteoResponseDtoCopyWithImpl<$Res,
   @override
   $Res call({
     Object? latitude = null,
-    Object? longitute = null,
+    Object? longitude = null,
     Object? generationtimeMs = null,
     Object? utcOffsetSeconds = null,
     Object? timezone = null,
@@ -99,9 +99,9 @@ class _$OpenMeteoResponseDtoCopyWithImpl<$Res,
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
               as double,
-      longitute: null == longitute
-          ? _value.longitute
-          : longitute // ignore: cast_nullable_to_non_nullable
+      longitude: null == longitude
+          ? _value.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
               as double,
       generationtimeMs: null == generationtimeMs
           ? _value.generationtimeMs
@@ -185,7 +185,7 @@ abstract class _$$_OpenMeteoResponseDtoCopyWith<$Res>
   @useResult
   $Res call(
       {double latitude,
-      double longitute,
+      double longitude,
       @JsonKey(name: 'generationtime_ms') double generationtimeMs,
       @JsonKey(name: 'utc_offset_seconds') int utcOffsetSeconds,
       String timezone,
@@ -218,7 +218,7 @@ class __$$_OpenMeteoResponseDtoCopyWithImpl<$Res>
   @override
   $Res call({
     Object? latitude = null,
-    Object? longitute = null,
+    Object? longitude = null,
     Object? generationtimeMs = null,
     Object? utcOffsetSeconds = null,
     Object? timezone = null,
@@ -234,9 +234,9 @@ class __$$_OpenMeteoResponseDtoCopyWithImpl<$Res>
           ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
               as double,
-      longitute: null == longitute
-          ? _value.longitute
-          : longitute // ignore: cast_nullable_to_non_nullable
+      longitude: null == longitude
+          ? _value.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
               as double,
       generationtimeMs: null == generationtimeMs
           ? _value.generationtimeMs
@@ -283,7 +283,7 @@ class __$$_OpenMeteoResponseDtoCopyWithImpl<$Res>
 class _$_OpenMeteoResponseDto implements _OpenMeteoResponseDto {
   _$_OpenMeteoResponseDto(
       {required this.latitude,
-      required this.longitute,
+      required this.longitude,
       @JsonKey(name: 'generationtime_ms')
           required this.generationtimeMs,
       @JsonKey(name: 'utc_offset_seconds')
@@ -305,7 +305,7 @@ class _$_OpenMeteoResponseDto implements _OpenMeteoResponseDto {
   @override
   final double latitude;
   @override
-  final double longitute;
+  final double longitude;
   @override
   @JsonKey(name: 'generationtime_ms')
   final double generationtimeMs;
@@ -332,7 +332,7 @@ class _$_OpenMeteoResponseDto implements _OpenMeteoResponseDto {
 
   @override
   String toString() {
-    return 'OpenMeteoResponseDto(latitude: $latitude, longitute: $longitute, generationtimeMs: $generationtimeMs, utcOffsetSeconds: $utcOffsetSeconds, timezone: $timezone, timezoneAbbreviation: $timezoneAbbreviation, elevation: $elevation, hourlyUnits: $hourlyUnits, hourly: $hourly, dailyUnits: $dailyUnits, daily: $daily)';
+    return 'OpenMeteoResponseDto(latitude: $latitude, longitude: $longitude, generationtimeMs: $generationtimeMs, utcOffsetSeconds: $utcOffsetSeconds, timezone: $timezone, timezoneAbbreviation: $timezoneAbbreviation, elevation: $elevation, hourlyUnits: $hourlyUnits, hourly: $hourly, dailyUnits: $dailyUnits, daily: $daily)';
   }
 
   @override
@@ -342,8 +342,8 @@ class _$_OpenMeteoResponseDto implements _OpenMeteoResponseDto {
             other is _$_OpenMeteoResponseDto &&
             (identical(other.latitude, latitude) ||
                 other.latitude == latitude) &&
-            (identical(other.longitute, longitute) ||
-                other.longitute == longitute) &&
+            (identical(other.longitude, longitude) ||
+                other.longitude == longitude) &&
             (identical(other.generationtimeMs, generationtimeMs) ||
                 other.generationtimeMs == generationtimeMs) &&
             (identical(other.utcOffsetSeconds, utcOffsetSeconds) ||
@@ -367,7 +367,7 @@ class _$_OpenMeteoResponseDto implements _OpenMeteoResponseDto {
   int get hashCode => Object.hash(
       runtimeType,
       latitude,
-      longitute,
+      longitude,
       generationtimeMs,
       utcOffsetSeconds,
       timezone,
@@ -396,7 +396,7 @@ class _$_OpenMeteoResponseDto implements _OpenMeteoResponseDto {
 abstract class _OpenMeteoResponseDto implements OpenMeteoResponseDto {
   factory _OpenMeteoResponseDto(
       {required final double latitude,
-      required final double longitute,
+      required final double longitude,
       @JsonKey(name: 'generationtime_ms')
           required final double generationtimeMs,
       @JsonKey(name: 'utc_offset_seconds')
@@ -418,7 +418,7 @@ abstract class _OpenMeteoResponseDto implements OpenMeteoResponseDto {
   @override
   double get latitude;
   @override
-  double get longitute;
+  double get longitude;
   @override
   @JsonKey(name: 'generationtime_ms')
   double get generationtimeMs;

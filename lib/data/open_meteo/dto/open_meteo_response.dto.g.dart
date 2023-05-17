@@ -10,7 +10,7 @@ _$_OpenMeteoResponseDto _$$_OpenMeteoResponseDtoFromJson(
         Map<String, dynamic> json) =>
     _$_OpenMeteoResponseDto(
       latitude: (json['latitude'] as num).toDouble(),
-      longitute: (json['longitute'] as num).toDouble(),
+      longitude: (json['longitude'] as num).toDouble(),
       generationtimeMs: (json['generationtime_ms'] as num).toDouble(),
       utcOffsetSeconds: json['utc_offset_seconds'] as int,
       timezone: json['timezone'] as String,
@@ -29,7 +29,7 @@ Map<String, dynamic> _$$_OpenMeteoResponseDtoToJson(
         _$_OpenMeteoResponseDto instance) =>
     <String, dynamic>{
       'latitude': instance.latitude,
-      'longitute': instance.longitute,
+      'longitude': instance.longitude,
       'generationtime_ms': instance.generationtimeMs,
       'utc_offset_seconds': instance.utcOffsetSeconds,
       'timezone': instance.timezone,

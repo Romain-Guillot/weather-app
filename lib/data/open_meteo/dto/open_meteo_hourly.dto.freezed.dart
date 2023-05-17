@@ -21,18 +21,19 @@ OpenMeteoHourlyDto _$OpenMeteoHourlyDtoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$OpenMeteoHourlyDto {
   List<String> get time => throw _privateConstructorUsedError;
-  List<double> get temperature_2m => throw _privateConstructorUsedError;
-  List<double> get relativehumidity_2m => throw _privateConstructorUsedError;
-  List<double> get apparent_temperature => throw _privateConstructorUsedError;
-  List<double> get precipitation_probability =>
+  List<double?> get temperature_2m => throw _privateConstructorUsedError;
+  List<double?> get relativehumidity_2m => throw _privateConstructorUsedError;
+  List<double?> get apparent_temperature => throw _privateConstructorUsedError;
+  List<double?> get precipitation_probability =>
       throw _privateConstructorUsedError;
-  List<double> get precipitation => throw _privateConstructorUsedError;
-  List<double> get rain => throw _privateConstructorUsedError;
-  List<double> get snowfall => throw _privateConstructorUsedError;
-  List<int> get weathercode => throw _privateConstructorUsedError;
-  List<double> get windspeed_10m => throw _privateConstructorUsedError;
-  List<double> get uv_index => throw _privateConstructorUsedError;
-  List<bool> get is_day => throw _privateConstructorUsedError;
+  List<double?> get precipitation => throw _privateConstructorUsedError;
+  List<double?> get rain => throw _privateConstructorUsedError;
+  List<double?> get snowfall => throw _privateConstructorUsedError;
+  List<int?> get weathercode => throw _privateConstructorUsedError;
+  List<double?> get windspeed_10m => throw _privateConstructorUsedError;
+  List<double?> get uv_index => throw _privateConstructorUsedError;
+  @BoolIntConverter()
+  List<bool?> get is_day => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -48,17 +49,17 @@ abstract class $OpenMeteoHourlyDtoCopyWith<$Res> {
   @useResult
   $Res call(
       {List<String> time,
-      List<double> temperature_2m,
-      List<double> relativehumidity_2m,
-      List<double> apparent_temperature,
-      List<double> precipitation_probability,
-      List<double> precipitation,
-      List<double> rain,
-      List<double> snowfall,
-      List<int> weathercode,
-      List<double> windspeed_10m,
-      List<double> uv_index,
-      List<bool> is_day});
+      List<double?> temperature_2m,
+      List<double?> relativehumidity_2m,
+      List<double?> apparent_temperature,
+      List<double?> precipitation_probability,
+      List<double?> precipitation,
+      List<double?> rain,
+      List<double?> snowfall,
+      List<int?> weathercode,
+      List<double?> windspeed_10m,
+      List<double?> uv_index,
+      @BoolIntConverter() List<bool?> is_day});
 }
 
 /// @nodoc
@@ -95,47 +96,47 @@ class _$OpenMeteoHourlyDtoCopyWithImpl<$Res, $Val extends OpenMeteoHourlyDto>
       temperature_2m: null == temperature_2m
           ? _value.temperature_2m
           : temperature_2m // ignore: cast_nullable_to_non_nullable
-              as List<double>,
+              as List<double?>,
       relativehumidity_2m: null == relativehumidity_2m
           ? _value.relativehumidity_2m
           : relativehumidity_2m // ignore: cast_nullable_to_non_nullable
-              as List<double>,
+              as List<double?>,
       apparent_temperature: null == apparent_temperature
           ? _value.apparent_temperature
           : apparent_temperature // ignore: cast_nullable_to_non_nullable
-              as List<double>,
+              as List<double?>,
       precipitation_probability: null == precipitation_probability
           ? _value.precipitation_probability
           : precipitation_probability // ignore: cast_nullable_to_non_nullable
-              as List<double>,
+              as List<double?>,
       precipitation: null == precipitation
           ? _value.precipitation
           : precipitation // ignore: cast_nullable_to_non_nullable
-              as List<double>,
+              as List<double?>,
       rain: null == rain
           ? _value.rain
           : rain // ignore: cast_nullable_to_non_nullable
-              as List<double>,
+              as List<double?>,
       snowfall: null == snowfall
           ? _value.snowfall
           : snowfall // ignore: cast_nullable_to_non_nullable
-              as List<double>,
+              as List<double?>,
       weathercode: null == weathercode
           ? _value.weathercode
           : weathercode // ignore: cast_nullable_to_non_nullable
-              as List<int>,
+              as List<int?>,
       windspeed_10m: null == windspeed_10m
           ? _value.windspeed_10m
           : windspeed_10m // ignore: cast_nullable_to_non_nullable
-              as List<double>,
+              as List<double?>,
       uv_index: null == uv_index
           ? _value.uv_index
           : uv_index // ignore: cast_nullable_to_non_nullable
-              as List<double>,
+              as List<double?>,
       is_day: null == is_day
           ? _value.is_day
           : is_day // ignore: cast_nullable_to_non_nullable
-              as List<bool>,
+              as List<bool?>,
     ) as $Val);
   }
 }
@@ -150,17 +151,17 @@ abstract class _$$_OpenMeteoHourlyDtoCopyWith<$Res>
   @useResult
   $Res call(
       {List<String> time,
-      List<double> temperature_2m,
-      List<double> relativehumidity_2m,
-      List<double> apparent_temperature,
-      List<double> precipitation_probability,
-      List<double> precipitation,
-      List<double> rain,
-      List<double> snowfall,
-      List<int> weathercode,
-      List<double> windspeed_10m,
-      List<double> uv_index,
-      List<bool> is_day});
+      List<double?> temperature_2m,
+      List<double?> relativehumidity_2m,
+      List<double?> apparent_temperature,
+      List<double?> precipitation_probability,
+      List<double?> precipitation,
+      List<double?> rain,
+      List<double?> snowfall,
+      List<int?> weathercode,
+      List<double?> windspeed_10m,
+      List<double?> uv_index,
+      @BoolIntConverter() List<bool?> is_day});
 }
 
 /// @nodoc
@@ -195,47 +196,47 @@ class __$$_OpenMeteoHourlyDtoCopyWithImpl<$Res>
       temperature_2m: null == temperature_2m
           ? _value._temperature_2m
           : temperature_2m // ignore: cast_nullable_to_non_nullable
-              as List<double>,
+              as List<double?>,
       relativehumidity_2m: null == relativehumidity_2m
           ? _value._relativehumidity_2m
           : relativehumidity_2m // ignore: cast_nullable_to_non_nullable
-              as List<double>,
+              as List<double?>,
       apparent_temperature: null == apparent_temperature
           ? _value._apparent_temperature
           : apparent_temperature // ignore: cast_nullable_to_non_nullable
-              as List<double>,
+              as List<double?>,
       precipitation_probability: null == precipitation_probability
           ? _value._precipitation_probability
           : precipitation_probability // ignore: cast_nullable_to_non_nullable
-              as List<double>,
+              as List<double?>,
       precipitation: null == precipitation
           ? _value._precipitation
           : precipitation // ignore: cast_nullable_to_non_nullable
-              as List<double>,
+              as List<double?>,
       rain: null == rain
           ? _value._rain
           : rain // ignore: cast_nullable_to_non_nullable
-              as List<double>,
+              as List<double?>,
       snowfall: null == snowfall
           ? _value._snowfall
           : snowfall // ignore: cast_nullable_to_non_nullable
-              as List<double>,
+              as List<double?>,
       weathercode: null == weathercode
           ? _value._weathercode
           : weathercode // ignore: cast_nullable_to_non_nullable
-              as List<int>,
+              as List<int?>,
       windspeed_10m: null == windspeed_10m
           ? _value._windspeed_10m
           : windspeed_10m // ignore: cast_nullable_to_non_nullable
-              as List<double>,
+              as List<double?>,
       uv_index: null == uv_index
           ? _value._uv_index
           : uv_index // ignore: cast_nullable_to_non_nullable
-              as List<double>,
+              as List<double?>,
       is_day: null == is_day
           ? _value._is_day
           : is_day // ignore: cast_nullable_to_non_nullable
-              as List<bool>,
+              as List<bool?>,
     ));
   }
 }
@@ -245,17 +246,17 @@ class __$$_OpenMeteoHourlyDtoCopyWithImpl<$Res>
 class _$_OpenMeteoHourlyDto implements _OpenMeteoHourlyDto {
   _$_OpenMeteoHourlyDto(
       {required final List<String> time,
-      required final List<double> temperature_2m,
-      required final List<double> relativehumidity_2m,
-      required final List<double> apparent_temperature,
-      required final List<double> precipitation_probability,
-      required final List<double> precipitation,
-      required final List<double> rain,
-      required final List<double> snowfall,
-      required final List<int> weathercode,
-      required final List<double> windspeed_10m,
-      required final List<double> uv_index,
-      required final List<bool> is_day})
+      required final List<double?> temperature_2m,
+      required final List<double?> relativehumidity_2m,
+      required final List<double?> apparent_temperature,
+      required final List<double?> precipitation_probability,
+      required final List<double?> precipitation,
+      required final List<double?> rain,
+      required final List<double?> snowfall,
+      required final List<int?> weathercode,
+      required final List<double?> windspeed_10m,
+      required final List<double?> uv_index,
+      @BoolIntConverter() required final List<bool?> is_day})
       : _time = time,
         _temperature_2m = temperature_2m,
         _relativehumidity_2m = relativehumidity_2m,
@@ -280,92 +281,93 @@ class _$_OpenMeteoHourlyDto implements _OpenMeteoHourlyDto {
     return EqualUnmodifiableListView(_time);
   }
 
-  final List<double> _temperature_2m;
+  final List<double?> _temperature_2m;
   @override
-  List<double> get temperature_2m {
+  List<double?> get temperature_2m {
     if (_temperature_2m is EqualUnmodifiableListView) return _temperature_2m;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_temperature_2m);
   }
 
-  final List<double> _relativehumidity_2m;
+  final List<double?> _relativehumidity_2m;
   @override
-  List<double> get relativehumidity_2m {
+  List<double?> get relativehumidity_2m {
     if (_relativehumidity_2m is EqualUnmodifiableListView)
       return _relativehumidity_2m;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_relativehumidity_2m);
   }
 
-  final List<double> _apparent_temperature;
+  final List<double?> _apparent_temperature;
   @override
-  List<double> get apparent_temperature {
+  List<double?> get apparent_temperature {
     if (_apparent_temperature is EqualUnmodifiableListView)
       return _apparent_temperature;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_apparent_temperature);
   }
 
-  final List<double> _precipitation_probability;
+  final List<double?> _precipitation_probability;
   @override
-  List<double> get precipitation_probability {
+  List<double?> get precipitation_probability {
     if (_precipitation_probability is EqualUnmodifiableListView)
       return _precipitation_probability;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_precipitation_probability);
   }
 
-  final List<double> _precipitation;
+  final List<double?> _precipitation;
   @override
-  List<double> get precipitation {
+  List<double?> get precipitation {
     if (_precipitation is EqualUnmodifiableListView) return _precipitation;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_precipitation);
   }
 
-  final List<double> _rain;
+  final List<double?> _rain;
   @override
-  List<double> get rain {
+  List<double?> get rain {
     if (_rain is EqualUnmodifiableListView) return _rain;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_rain);
   }
 
-  final List<double> _snowfall;
+  final List<double?> _snowfall;
   @override
-  List<double> get snowfall {
+  List<double?> get snowfall {
     if (_snowfall is EqualUnmodifiableListView) return _snowfall;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_snowfall);
   }
 
-  final List<int> _weathercode;
+  final List<int?> _weathercode;
   @override
-  List<int> get weathercode {
+  List<int?> get weathercode {
     if (_weathercode is EqualUnmodifiableListView) return _weathercode;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_weathercode);
   }
 
-  final List<double> _windspeed_10m;
+  final List<double?> _windspeed_10m;
   @override
-  List<double> get windspeed_10m {
+  List<double?> get windspeed_10m {
     if (_windspeed_10m is EqualUnmodifiableListView) return _windspeed_10m;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_windspeed_10m);
   }
 
-  final List<double> _uv_index;
+  final List<double?> _uv_index;
   @override
-  List<double> get uv_index {
+  List<double?> get uv_index {
     if (_uv_index is EqualUnmodifiableListView) return _uv_index;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_uv_index);
   }
 
-  final List<bool> _is_day;
+  final List<bool?> _is_day;
   @override
-  List<bool> get is_day {
+  @BoolIntConverter()
+  List<bool?> get is_day {
     if (_is_day is EqualUnmodifiableListView) return _is_day;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_is_day);
@@ -436,18 +438,19 @@ class _$_OpenMeteoHourlyDto implements _OpenMeteoHourlyDto {
 
 abstract class _OpenMeteoHourlyDto implements OpenMeteoHourlyDto {
   factory _OpenMeteoHourlyDto(
-      {required final List<String> time,
-      required final List<double> temperature_2m,
-      required final List<double> relativehumidity_2m,
-      required final List<double> apparent_temperature,
-      required final List<double> precipitation_probability,
-      required final List<double> precipitation,
-      required final List<double> rain,
-      required final List<double> snowfall,
-      required final List<int> weathercode,
-      required final List<double> windspeed_10m,
-      required final List<double> uv_index,
-      required final List<bool> is_day}) = _$_OpenMeteoHourlyDto;
+          {required final List<String> time,
+          required final List<double?> temperature_2m,
+          required final List<double?> relativehumidity_2m,
+          required final List<double?> apparent_temperature,
+          required final List<double?> precipitation_probability,
+          required final List<double?> precipitation,
+          required final List<double?> rain,
+          required final List<double?> snowfall,
+          required final List<int?> weathercode,
+          required final List<double?> windspeed_10m,
+          required final List<double?> uv_index,
+          @BoolIntConverter() required final List<bool?> is_day}) =
+      _$_OpenMeteoHourlyDto;
 
   factory _OpenMeteoHourlyDto.fromJson(Map<String, dynamic> json) =
       _$_OpenMeteoHourlyDto.fromJson;
@@ -455,27 +458,28 @@ abstract class _OpenMeteoHourlyDto implements OpenMeteoHourlyDto {
   @override
   List<String> get time;
   @override
-  List<double> get temperature_2m;
+  List<double?> get temperature_2m;
   @override
-  List<double> get relativehumidity_2m;
+  List<double?> get relativehumidity_2m;
   @override
-  List<double> get apparent_temperature;
+  List<double?> get apparent_temperature;
   @override
-  List<double> get precipitation_probability;
+  List<double?> get precipitation_probability;
   @override
-  List<double> get precipitation;
+  List<double?> get precipitation;
   @override
-  List<double> get rain;
+  List<double?> get rain;
   @override
-  List<double> get snowfall;
+  List<double?> get snowfall;
   @override
-  List<int> get weathercode;
+  List<int?> get weathercode;
   @override
-  List<double> get windspeed_10m;
+  List<double?> get windspeed_10m;
   @override
-  List<double> get uv_index;
+  List<double?> get uv_index;
   @override
-  List<bool> get is_day;
+  @BoolIntConverter()
+  List<bool?> get is_day;
   @override
   @JsonKey(ignore: true)
   _$$_OpenMeteoHourlyDtoCopyWith<_$_OpenMeteoHourlyDto> get copyWith =>

@@ -21,6 +21,7 @@ lib
         - settings
     - repositories
     - resources
+    - services
 ```
 
 ## Env
@@ -55,3 +56,15 @@ fvm flutter pub run build_runner build --delete-conflicting-outputs
 [Open Meteo](https://open-meteo.com/) API is used to retrieve all the weather information (current, forecast, ...).
 
 [`retrofit`] is used to generate the HTTP request to this service.
+
+## State management
+
+[`riverpod`]()
+
+## Assets
+- [Material Symbols](https://fonts.google.com/icons)
+- [Openmoji](https://openmoji.org/library/)
+
+[`spider`]() package is used to generate constant paths from the asset folder.
+
+App icons are registered inside the file `resources\icons.dart`.

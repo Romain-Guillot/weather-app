@@ -10,24 +10,24 @@ _$_OpenMeteoDailyDto _$$_OpenMeteoDailyDtoFromJson(Map<String, dynamic> json) =>
     _$_OpenMeteoDailyDto(
       time: (json['time'] as List<dynamic>).map((e) => e as String).toList(),
       weathercode:
-          (json['weathercode'] as List<dynamic>).map((e) => e as int).toList(),
+          (json['weathercode'] as List<dynamic>).map((e) => e as int?).toList(),
       temperature_2m_max: (json['temperature_2m_max'] as List<dynamic>)
-          .map((e) => (e as num).toDouble())
+          .map((e) => (e as num?)?.toDouble())
           .toList(),
       temperature_2m_min: (json['temperature_2m_min'] as List<dynamic>)
-          .map((e) => (e as num).toDouble())
+          .map((e) => (e as num?)?.toDouble())
           .toList(),
       uv_index_max: (json['uv_index_max'] as List<dynamic>)
-          .map((e) => (e as num).toDouble())
+          .map((e) => (e as num?)?.toDouble())
           .toList(),
       precipitation_sum: (json['precipitation_sum'] as List<dynamic>)
-          .map((e) => (e as num).toDouble())
+          .map((e) => (e as num?)?.toDouble())
           .toList(),
       rain_sum: (json['rain_sum'] as List<dynamic>)
-          .map((e) => (e as num).toDouble())
+          .map((e) => (e as num?)?.toDouble())
           .toList(),
       snowfall_sum: (json['snowfall_sum'] as List<dynamic>)
-          .map((e) => (e as num).toDouble())
+          .map((e) => (e as num?)?.toDouble())
           .toList(),
     );
 

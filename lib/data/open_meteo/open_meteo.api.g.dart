@@ -20,21 +20,21 @@ class _OpenMeteoApi implements OpenMeteoApi {
 
   @override
   Future<OpenMeteoResponseDto> get({
-    required dynamic latitude,
-    required dynamic longitude,
-    required dynamic hourly,
-    required dynamic daily,
-    required dynamic forecast_days,
-    required dynamic timezone,
+    required double latitude,
+    required double longitude,
+    required String hourly,
+    required String daily,
+    required int forecastDays,
+    required String timezone,
   }) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
-      r'latitude': latitude.toJson(),
-      r'latitude': longitude.toJson(),
-      r'hourly': hourly.toJson(),
-      r'daily': daily.toJson(),
-      r'forecast_days': forecast_days.toJson(),
-      r'timezone': timezone.toJson(),
+      r'latitude': latitude,
+      r'longitude': longitude,
+      r'hourly': hourly,
+      r'daily': daily,
+      r'forecast_days': forecastDays,
+      r'timezone': timezone,
     };
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;

@@ -1,5 +1,52 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
+import 'package:ox_sdk/ox_sdk.dart';
+
+Iterable<ThemeExtension<dynamic>>? extensions = [
+  const ColorsTheme(
+    error: Color(0xffFE9399),
+    onError: Color(0xff57070C),
+    info: Color(0xffAECFFF),
+    onInfo: Color(0xff00132F),
+    success: Color(0xffA9FFAC),
+    onSuccess: Color(0xff023D04),
+    onWarning: Color(0xff512E06),
+    warning: Color(0xffFDCD95),
+    supportings: {},
+  ),
+  RadiusesTheme(
+    tiny: BorderRadius.circular(5.0),
+    medium: BorderRadius.circular(12.0),
+    big: BorderRadius.circular(20.0),
+    small: BorderRadius.circular(999.0),
+  ),
+  const PaddingsTheme(
+    tiny: 4.0,
+    medium: 16.0,
+    big: 26.0,
+    small: 8.0,
+  ),
+  const MarginTheme(normal: 16),
+  const ConstraintsTheme(
+    maxPageWidth: 1024,
+    mobileScreenMax: 800,
+    snackbarMaxSize: 800,
+  ),
+  const ComponentsTheme(
+    dataGrid: null,
+    tooltip: null,
+  ),
+  ButtonThemes(
+    error: FilledButton.styleFrom(
+      foregroundColor: const Color(0xff57070C),
+      backgroundColor: const Color(0xffFE9399),
+    ),
+    success: FilledButton.styleFrom(
+      foregroundColor: const Color(0xff023D04),
+      backgroundColor: const Color(0xffA9FFAC),
+    ),
+  )
+];
 
 final lightTheme = FlexThemeData.light(
   colors: const FlexSchemeColor(
@@ -25,7 +72,7 @@ final lightTheme = FlexThemeData.light(
   swapLegacyOnMaterial3: true,
   // To use the Playground font, add GoogleFonts package and uncomment
   // fontFamily: GoogleFonts.notoSans().fontFamily,
-);
+).copyWith(extensions: extensions, inputDecorationTheme: InputDecorationTheme());
 
 final darkTheme = FlexThemeData.dark(
   colors: const FlexSchemeColor(
@@ -50,4 +97,4 @@ final darkTheme = FlexThemeData.dark(
   swapLegacyOnMaterial3: true,
   // To use the Playground font, add GoogleFonts package and uncomment
   // fontFamily: GoogleFonts.notoSans().fontFamily,
-);
+).copyWith(extensions: extensions, inputDecorationTheme: InputDecorationTheme());

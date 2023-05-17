@@ -1,4 +1,6 @@
 class Env {
+  Env._();
+
   static void initializeWith({
     required bool sentryEnabled,
     required String sentryURL,
@@ -8,11 +10,11 @@ class Env {
     Env.mocking = mocking;
     Env.sentryEnabled = sentryEnabled;
     Env.sentryURL = sentryURL;
-    Env.awsBaseURL = awsBaseURL;
+    Env.openMeteoBaseURL = openMeteoBaseURL;
   }
 
   static late final bool mocking;
   static late final bool sentryEnabled;
   static late final String sentryURL;
-  static late final String awsBaseURL;
+  static late final String openMeteoBaseURL;
 }

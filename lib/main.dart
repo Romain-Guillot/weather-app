@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:ox_sdk/ox_sdk.dart';
 import 'package:weatherapp/core/theme/theme.dart';
 import 'package:weatherapp/env.dart';
-import 'package:weatherapp/extensions/context.extension.dart';
+import 'package:weatherapp/modules/home/widgets/home.page.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,7 +15,9 @@ void main() {
     openMeteoBaseURL: const String.fromEnvironment('OPEN_METEO_BASE_URL'),
   );
 
-  runApp(const WeatherApp());
+  runApp(const ProviderScope(
+    child: WeatherApp(),
+  ));
 }
 
 class WeatherApp extends StatelessWidget {
@@ -30,19 +33,6 @@ class WeatherApp extends StatelessWidget {
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       home: const HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(context.strings.appName),
-      ),
     );
   }
 }

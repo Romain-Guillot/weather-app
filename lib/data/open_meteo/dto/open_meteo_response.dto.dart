@@ -11,7 +11,7 @@ part 'open_meteo_response.dto.g.dart';
 class OpenMeteoResponseDto with _$OpenMeteoResponseDto {
   factory OpenMeteoResponseDto({
     required double latitude,
-    required double longitute,
+    required double longitude,
     @JsonKey(name: 'generationtime_ms') required double generationtimeMs,
     @JsonKey(name: 'utc_offset_seconds') required int utcOffsetSeconds,
     required String timezone,
