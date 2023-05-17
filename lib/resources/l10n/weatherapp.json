@@ -1,0 +1,6 @@
+{
+    "appName": {
+        "value": "Weather app",
+        "context": "Title label to describe a weather application"
+    }
+}

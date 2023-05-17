@@ -1,16 +1,28 @@
-# weatherapp
+# Weather App (demo)
 
-A new Flutter project.
 
-## Getting Started
+## Flutter version
 
-This project is a starting point for a Flutter application.
+FVM is used to manage the Flutter version. See `.fvm/fvm_config.json` to known to Flutter version currently used.
 
-A few resources to get you started if this is your first Flutter project:
+## Application structure
+```
+lib
+    - core
+    - data
+    - entities
+    - extensions
+    - modules
+        - home
+        - settings
+    - repositories
+    - resources
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Intl
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+[AI tranlator](TODO) tool is used to translate the application. This tool translate the values of the `resources/l10n/weatherapp.json` file with ChatGTP 3.5. 
+
+```
+python3 arb_translator.py /home/ob/Documents/Projets/weather-app/weatherapp/lib/resources/l10n/weatherapp.json --key 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 -o /home/ob/Documents/Projets/weather-app/weatherapp/lib/resources/l10n
+```
