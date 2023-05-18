@@ -20,6 +20,7 @@ mixin _$InstantWeatherInfoModel {
   double? get temperature => throw _privateConstructorUsedError;
   WeatherCode? get weatherCode => throw _privateConstructorUsedError;
   double? get humidity => throw _privateConstructorUsedError;
+  bool get isDay => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $InstantWeatherInfoModelCopyWith<InstantWeatherInfoModel> get copyWith =>
@@ -36,7 +37,8 @@ abstract class $InstantWeatherInfoModelCopyWith<$Res> {
       {DateTime timestamp,
       double? temperature,
       WeatherCode? weatherCode,
-      double? humidity});
+      double? humidity,
+      bool isDay});
 }
 
 /// @nodoc
@@ -57,6 +59,7 @@ class _$InstantWeatherInfoModelCopyWithImpl<$Res,
     Object? temperature = freezed,
     Object? weatherCode = freezed,
     Object? humidity = freezed,
+    Object? isDay = null,
   }) {
     return _then(_value.copyWith(
       timestamp: null == timestamp
@@ -75,6 +78,10 @@ class _$InstantWeatherInfoModelCopyWithImpl<$Res,
           ? _value.humidity
           : humidity // ignore: cast_nullable_to_non_nullable
               as double?,
+      isDay: null == isDay
+          ? _value.isDay
+          : isDay // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -91,7 +98,8 @@ abstract class _$$_InstantWeatherInfoModelCopyWith<$Res>
       {DateTime timestamp,
       double? temperature,
       WeatherCode? weatherCode,
-      double? humidity});
+      double? humidity,
+      bool isDay});
 }
 
 /// @nodoc
@@ -110,6 +118,7 @@ class __$$_InstantWeatherInfoModelCopyWithImpl<$Res>
     Object? temperature = freezed,
     Object? weatherCode = freezed,
     Object? humidity = freezed,
+    Object? isDay = null,
   }) {
     return _then(_$_InstantWeatherInfoModel(
       timestamp: null == timestamp
@@ -128,6 +137,10 @@ class __$$_InstantWeatherInfoModelCopyWithImpl<$Res>
           ? _value.humidity
           : humidity // ignore: cast_nullable_to_non_nullable
               as double?,
+      isDay: null == isDay
+          ? _value.isDay
+          : isDay // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -139,7 +152,8 @@ class _$_InstantWeatherInfoModel implements _InstantWeatherInfoModel {
       {required this.timestamp,
       required this.temperature,
       required this.weatherCode,
-      required this.humidity});
+      required this.humidity,
+      required this.isDay});
 
   @override
   final DateTime timestamp;
@@ -149,10 +163,12 @@ class _$_InstantWeatherInfoModel implements _InstantWeatherInfoModel {
   final WeatherCode? weatherCode;
   @override
   final double? humidity;
+  @override
+  final bool isDay;
 
   @override
   String toString() {
-    return 'InstantWeatherInfoModel(timestamp: $timestamp, temperature: $temperature, weatherCode: $weatherCode, humidity: $humidity)';
+    return 'InstantWeatherInfoModel(timestamp: $timestamp, temperature: $temperature, weatherCode: $weatherCode, humidity: $humidity, isDay: $isDay)';
   }
 
   @override
@@ -167,12 +183,13 @@ class _$_InstantWeatherInfoModel implements _InstantWeatherInfoModel {
             (identical(other.weatherCode, weatherCode) ||
                 other.weatherCode == weatherCode) &&
             (identical(other.humidity, humidity) ||
-                other.humidity == humidity));
+                other.humidity == humidity) &&
+            (identical(other.isDay, isDay) || other.isDay == isDay));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, timestamp, temperature, weatherCode, humidity);
+  int get hashCode => Object.hash(
+      runtimeType, timestamp, temperature, weatherCode, humidity, isDay);
 
   @JsonKey(ignore: true)
   @override
@@ -188,7 +205,8 @@ abstract class _InstantWeatherInfoModel implements InstantWeatherInfoModel {
       {required final DateTime timestamp,
       required final double? temperature,
       required final WeatherCode? weatherCode,
-      required final double? humidity}) = _$_InstantWeatherInfoModel;
+      required final double? humidity,
+      required final bool isDay}) = _$_InstantWeatherInfoModel;
 
   @override
   DateTime get timestamp;
@@ -198,6 +216,8 @@ abstract class _InstantWeatherInfoModel implements InstantWeatherInfoModel {
   WeatherCode? get weatherCode;
   @override
   double? get humidity;
+  @override
+  bool get isDay;
   @override
   @JsonKey(ignore: true)
   _$$_InstantWeatherInfoModelCopyWith<_$_InstantWeatherInfoModel>

@@ -10,5 +10,6 @@ class InstantWeatherInfoModel with _$InstantWeatherInfoModel {
     required double? temperature,
     required WeatherCode? weatherCode,
     required double? humidity,
+    required bool isDay,
   }) = _InstantWeatherInfoModel;
 }

@@ -16,12 +16,12 @@ class NowWeatherCardWidget extends ConsumerWidget {
 
     return AppCardWiget(
       function: OCardFunction.primaryHighlight,
-      title: Text('Now'),
       child: ProviderValueBuilder<InstantWeatherInfoModel, AppException>(
         value: notifier.data,
         dataBuilder: (context, data) {
           final temperature = data.temperature;
           final weatherCode = data.weatherCode;
+          final isDay = data.isDay;
 
           return Row(
             children: [
@@ -55,6 +55,7 @@ class NowWeatherCardWidget extends ConsumerWidget {
                 WeatherCodeIconWidget(
                   code: weatherCode,
                   width: 85,
+                  isDay: isDay,
                 ),
             ],
           );

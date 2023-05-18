@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:ox_sdk/ox_sdk.dart';
 import 'package:weatherapp/core/theme/theme.dart';
 import 'package:weatherapp/env.dart';
-import 'package:weatherapp/modules/home/widgets/home.page.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:weatherapp/modules/settings/widgets/preferred_locale_builder.widget.dart';
+import 'package:weatherapp/router.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,13 +27,16 @@ class WeatherApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Weather app',
-      theme: lightTheme,
-      darkTheme: darkTheme,
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
-      home: const HomePage(),
+    return PreferredLocaleBuilderWidget(
+      builder: (context, locale) => MaterialApp.router(
+        title: 'Weather app',
+        locale: locale,
+        theme: lightTheme,
+        darkTheme: darkTheme,
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
+        routerConfig: router,
+      ),
     );
   }
 }

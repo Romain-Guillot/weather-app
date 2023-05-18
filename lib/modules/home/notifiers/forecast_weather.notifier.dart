@@ -5,7 +5,7 @@ import 'package:weatherapp/models/forecast_weather_info.model.dart';
 import 'package:weatherapp/models/weather.model.dart';
 import 'package:weatherapp/modules/home/notifiers/weather.notifier.dart';
 
-final forecastWeatherNotifierProvider = ChangeNotifierProvider.autoDispose((ref) {
+final forecastWeatherNotifierProvider = ChangeNotifierProvider((ref) {
   final notifier = ForecastWeatherNotifier(
     logger: XLoggerImpl(context: ForecastWeatherNotifier),
     weather: ref.watch(weatherNotifierProvider).weather,
@@ -31,7 +31,7 @@ class ForecastWeatherNotifier extends ChangeNotifier {
 
     final weatherValue = weather.value;
     if (weather.isNotInitialized || weatherValue == null || weatherValue.hourly.time.isEmpty) {
-      weather.reset();
+      data.reset();
     } else if (weather.hasError) {
       data.error = weather.error;
     } else {

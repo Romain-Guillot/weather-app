@@ -5,7 +5,7 @@ import 'package:weatherapp/models/instant_weather_info.model.dart';
 import 'package:weatherapp/models/weather.model.dart';
 import 'package:weatherapp/modules/home/notifiers/weather.notifier.dart';
 
-final nowWeatherNotifierProvider = ChangeNotifierProvider.autoDispose((ref) {
+final nowWeatherNotifierProvider = ChangeNotifierProvider((ref) {
   final notifier = NowWeatherNotifier(
     logger: XLoggerImpl(context: NowWeatherNotifier),
     weather: ref.watch(weatherNotifierProvider).weather,
@@ -31,12 +31,12 @@ class NowWeatherNotifier extends ChangeNotifier {
 
     final weatherValue = weather.value;
     if (weather.isNotInitialized || weatherValue == null || weatherValue.hourly.time.isEmpty) {
-      weather.reset();
+      data.reset();
     } else if (weather.hasError) {
       data.error = weather.error;
     } else {
       final now = DateTime.now().copyWith(minute: 00);
-      final formatter = DateFormat('yyyy-MM-ddTH:m');
+      final formatter = DateFormat('yyyy-MM-ddTH:mm');
       final formattedDate = formatter.format(now);
       final isDateExisting = weatherValue.hourly.time.any((e) => e == formattedDate);
       final index = isDateExisting ? weatherValue.hourly.time.indexOf(formattedDate) : 0;
@@ -46,6 +46,7 @@ class NowWeatherNotifier extends ChangeNotifier {
         temperature: weatherValue.hourly.temperature_2m[index],
         weatherCode: weatherValue.hourly.weathercode[index]?.code,
         humidity: weatherValue.hourly.relativehumidity_2m[index],
+        isDay: weatherValue.hourly.is_day[index] ?? true,
       );
     }
   }

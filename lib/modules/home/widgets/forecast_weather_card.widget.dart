@@ -13,23 +13,20 @@ class ForecastWeatherCardWidget extends ConsumerWidget {
     final notifier = ref.watch(forecastWeatherNotifierProvider);
 
     return AppCardWiget(
-      title: Text('Daily'),
       child: ProviderValueBuilder<List<ForecastWeatherInfoModel>, AppException>(
         value: notifier.data,
-        dataBuilder: (context, data) => SizedBox(
-          height: 999, // TODO sliver
-          child: ListView.separated(
-            shrinkWrap: true,
-            itemCount: data.length,
-            separatorBuilder: (context, index) => const PaddingSpacer(),
-            itemBuilder: (context, index) {
-              final forecastWeather = data[index];
+        dataBuilder: (context, data) => ListView.separated(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: data.length,
+          separatorBuilder: (context, index) => const PaddingSpacer(),
+          itemBuilder: (context, index) {
+            final forecastWeather = data[index];
 
-              return _ForecastItemWidget(
-                forecastWeather: forecastWeather,
-              );
-            },
-          ),
+            return _ForecastItemWidget(
+              forecastWeather: forecastWeather,
+            );
+          },
         ),
       ),
     );
@@ -68,7 +65,8 @@ class _ForecastItemWidget extends StatelessWidget {
             padding: EdgeInsets.only(left: theme.paddings.medium),
             child: WeatherCodeIconWidget(
               code: code,
-              height: 35,
+              height: 36,
+              isDay: true,
             ),
           ),
       ],

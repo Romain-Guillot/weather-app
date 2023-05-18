@@ -23,16 +23,20 @@ dependencies:
   intl: any
   geocoding: ^2.1.0
   geolocator: ^9.0.2
+  lottie: ^2.3.2
+  isar: ^3.1.0+1
+  isar_flutter_libs: ^3.1.0+1
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
-  build_runner: ^2.3.3
+  build_runner: ^2.4.4
   freezed: ^2.3.2
   retrofit_generator: ^6.0.0+3
   json_serializable: ^6.6.1
+  isar_generator: ^3.1.0+1
 
 flutter:
   generate: true
@@ -50,4 +54,4 @@ spider:
   groups:
     - path: assets/images
       class_name: Images
-      types: [ .png, .jpg, .svg, .jpeg, .webp, .webm, .bmp ]
+      types: [ .png, .jpg, .svg, .jpeg, .webp, .webm, .bmp , .json]

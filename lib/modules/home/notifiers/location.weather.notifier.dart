@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:ox_sdk/ox_sdk.dart';
+import 'package:weatherapp/core/errors/call_api_or_throw.dart';
 import 'package:weatherapp/core/models/geo_location.model.dart';
+import 'package:weatherapp/core/models/geocoding_place.model.dart';
 import 'package:weatherapp/extensions/geo_location.extension.dart';
 import 'package:weatherapp/services/geocoding.service.dart';
 
-final locationNotifierProvider = ChangeNotifierProvider.autoDispose((ref) {
+final locationNotifierProvider = ChangeNotifierProvider((ref) {
   final notifier = LocationNotifier(
     logger: XLoggerImpl(context: LocationNotifier),
     geocodingService: ref.watch(geocodingServiceProvider),
@@ -25,7 +27,7 @@ class LocationNotifier extends ChangeNotifier {
   final XLogger logger;
   final GeocodingService geocodingService;
 
-  String _placemark = _kDefaultLocation.format;
+  String _placemark = _kDefaultLocation.format();
   String get placemark => _placemark;
   set placemark(String value) {
     _placemark = value;
@@ -42,17 +44,30 @@ class LocationNotifier extends ChangeNotifier {
   Future<void> init() async {
     logger.d("init");
     try {
-      final currentLocation = await geocodingService.currentLocation();
+      final currentLocation = await callOrThrow(
+        () => geocodingService.currentLocation(),
+      );
       if (currentLocation != null) {
-        final placemark = await geocodingService.placemark(
-          currentLocation.lat,
-          currentLocation.lon,
+        final placemark = await callOrThrow(
+          () => geocodingService.retrievePlacemark(
+            currentLocation.lat,
+            currentLocation.lon,
+          ),
         );
-        this.placemark = placemark ?? currentLocation.format;
+        this.placemark = placemark ?? currentLocation.format();
         location = currentLocation;
       }
     } on AppException catch (e) {
       logger.exception('Unable to load weather', e);
     }
+  }
+
+  void onChange(GeocodingPlace place) {
+    placemark = place.placemark;
+    location = place.location;
+  }
+
+  void onChangeToCurrentLocation() {
+    init();
   }
 }

@@ -2,6 +2,9 @@ import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:ox_sdk/ox_sdk.dart';
 import 'package:weatherapp/core/models/geo_location.model.dart';
+import 'package:weatherapp/core/models/geocoding_place.model.dart';
+import 'package:weatherapp/extensions/geo_location.extension.dart';
+import 'package:weatherapp/extensions/placemark.extension.dart';
 
 final geocodingServiceProvider = Provider<GeocodingService>((ref) {
   return GeocodingService(
@@ -16,21 +19,27 @@ class GeocodingService {
 
   final XLogger logger;
 
-  Future<GeoLocation?> decode(String address) async {
-    final location = await locationFromAddress(address);
-    final effectiveLocation = location.firstOrNull;
-    if (effectiveLocation != null) {
-      return GeoLocation(effectiveLocation.latitude, effectiveLocation.longitude);
+  Future<List<GeocodingPlace>?> decode(String address) async {
+    final locations = await locationFromAddress(address);
+
+    final result = <GeocodingPlace>[];
+    for (final location in locations) {
+      final placemark = await placemarkFromCoordinates(location.latitude, location.longitude);
+      final position = GeoLocation(location.latitude, location.longitude);
+      result.add(GeocodingPlace(
+        location: position,
+        placemark: placemark.firstOrNull?.format() ?? position.format(),
+      ));
     }
 
-    return null;
+    return result;
   }
 
-  Future<String?> placemark(double lat, double lon) async {
+  Future<String?> retrievePlacemark(double lat, double lon) async {
     final location = await placemarkFromCoordinates(lat, lon);
     final effectiveLocation = location.firstOrNull;
     if (effectiveLocation != null) {
-      return effectiveLocation.locality;
+      return effectiveLocation.format();
     }
 
     return null;

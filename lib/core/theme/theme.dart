@@ -1,6 +1,7 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
-import 'package:ox_sdk/ox_sdk.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:ox_sdk/ox_sdk.dart' hide TextDirection;
 
 Iterable<ThemeExtension<dynamic>>? extensions = [
   const ColorsTheme(
@@ -48,7 +49,7 @@ Iterable<ThemeExtension<dynamic>>? extensions = [
   )
 ];
 
-final lightTheme = FlexThemeData.light(
+final _baseLightTheme = FlexThemeData.light(
   colors: const FlexSchemeColor(
     primary: Color(0xff383fef),
     primaryContainer: Color(0xffd0e4ff),
@@ -72,9 +73,9 @@ final lightTheme = FlexThemeData.light(
   swapLegacyOnMaterial3: true,
   // To use the Playground font, add GoogleFonts package and uncomment
   // fontFamily: GoogleFonts.notoSans().fontFamily,
-).copyWith(extensions: extensions, inputDecorationTheme: InputDecorationTheme());
+);
 
-final darkTheme = FlexThemeData.dark(
+final _baseDarkTheme = FlexThemeData.dark(
   colors: const FlexSchemeColor(
     primary: Color(0xff9fc9ff),
     primaryContainer: Color(0xff00325b),
@@ -97,4 +98,40 @@ final darkTheme = FlexThemeData.dark(
   swapLegacyOnMaterial3: true,
   // To use the Playground font, add GoogleFonts package and uncomment
   // fontFamily: GoogleFonts.notoSans().fontFamily,
-).copyWith(extensions: extensions, inputDecorationTheme: InputDecorationTheme());
+);
+
+final lightTheme = buildTheme(_baseLightTheme);
+final darkTheme = buildTheme(_baseDarkTheme);
+
+ThemeData buildTheme(ThemeData src) {
+  return src.copyWith(
+    extensions: extensions,
+    inputDecorationTheme: InputDecorationTheme(),
+    textTheme: GoogleFonts.poppinsTextTheme(src.textTheme).copyWith(
+      titleSmall: src.textTheme.titleSmall?.copyWith(
+        fontWeight: FontWeight.w500,
+      ),
+      titleMedium: src.textTheme.titleMedium?.copyWith(
+        fontWeight: FontWeight.w600,
+      ),
+      titleLarge: src.textTheme.titleLarge?.copyWith(
+        fontWeight: FontWeight.w600,
+      ),
+      headlineLarge: src.textTheme.headlineLarge?.copyWith(
+        fontWeight: FontWeight.w600,
+        fontSize: 38,
+      ),
+    ),
+    tabBarTheme: src.tabBarTheme.copyWith(
+      dividerColor: Colors.transparent,
+      indicator: UnderlineTabIndicator(
+        borderRadius: BorderRadius.circular(999),
+        borderSide: BorderSide(
+          color: src.colorScheme.primary,
+          width: 2.5,
+        ),
+      ),
+      indicatorSize: TabBarIndicatorSize.label,
+    ),
+  );
+}

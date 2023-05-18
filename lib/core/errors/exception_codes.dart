@@ -2,6 +2,7 @@ import 'package:ox_sdk/ox_sdk.dart';
 
 enum ExceptionCodes {
   failToLoadWeather(10001),
+  invalidHistoryEntry(10002),
 
   timeout(90001),
   unreachableApi(90002),

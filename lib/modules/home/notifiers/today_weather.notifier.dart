@@ -5,7 +5,7 @@ import 'package:weatherapp/models/instant_weather_info.model.dart';
 import 'package:weatherapp/models/weather.model.dart';
 import 'package:weatherapp/modules/home/notifiers/weather.notifier.dart';
 
-final todayWeatherNotifierProvider = ChangeNotifierProvider.autoDispose((ref) {
+final todayWeatherNotifierProvider = ChangeNotifierProvider((ref) {
   final notifier = TodayWeatherNotifier(
     logger: XLoggerImpl(context: TodayWeatherNotifier),
     weather: ref.watch(weatherNotifierProvider).weather,
@@ -26,26 +26,42 @@ class TodayWeatherNotifier extends ChangeNotifier {
 
   late final data = ProviderValue<List<InstantWeatherInfoModel>, AppException>(notify: notifyListeners);
 
+  int _nowIndex = 0;
+  int get nowIndex => _nowIndex;
+  set nowIndex(int value) {
+    _nowIndex = value;
+    notifyListeners();
+  }
+
   Future<void> init() async {
     logger.d("init");
 
     final weatherValue = weather.value;
     if (weather.isNotInitialized || weatherValue == null || weatherValue.hourly.time.isEmpty) {
-      weather.reset();
+      data.reset();
     } else if (weather.hasError) {
       data.error = weather.error;
     } else {
+      final now = DateTime.now().copyWith(minute: 00);
+      final formatter = DateFormat('yyyy-MM-ddTH:mm');
+      final formattedDate = formatter.format(now);
+
       final instantWeatherInfoModels = <InstantWeatherInfoModel>[];
       for (final rawTimestamp in weatherValue.hourly.time) {
-        final formatter = DateFormat('yyyy-MM-ddTH:m');
+        final formatter = DateFormat('yyyy-MM-ddTH:mm');
         final timestamp = formatter.parse(rawTimestamp);
         final index = weatherValue.hourly.time.indexOf(rawTimestamp);
+
+        if (rawTimestamp == formattedDate) {
+          _nowIndex = index;
+        }
 
         instantWeatherInfoModels.add(InstantWeatherInfoModel(
           timestamp: timestamp,
           temperature: weatherValue.hourly.temperature_2m[index],
           weatherCode: weatherValue.hourly.weathercode[index]?.code,
           humidity: weatherValue.hourly.relativehumidity_2m[index],
+          isDay: weatherValue.hourly.is_day[index] ?? true,
         ));
       }
       data.value = instantWeatherInfoModels;
