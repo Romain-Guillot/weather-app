@@ -21,19 +21,32 @@ OpenMeteoHourlyUnitsDto _$OpenMeteoHourlyUnitsDtoFromJson(
 
 /// @nodoc
 mixin _$OpenMeteoHourlyUnitsDto {
+  @JsonKey(name: 'time')
   String get time => throw _privateConstructorUsedError;
-  String get temperature_2m => throw _privateConstructorUsedError;
-  String get relativehumidity_2m => throw _privateConstructorUsedError;
-  String get dewpoint_2m => throw _privateConstructorUsedError;
-  String get apparent_temperature => throw _privateConstructorUsedError;
-  String get precipitation_probability => throw _privateConstructorUsedError;
+  @JsonKey(name: 'temperature_2m')
+  String get temperature2m => throw _privateConstructorUsedError;
+  @JsonKey(name: 'relativehumidity_2m')
+  String get relativehumidity2m => throw _privateConstructorUsedError;
+  @JsonKey(name: 'dewpoint_2m')
+  String get dewpoint2m => throw _privateConstructorUsedError;
+  @JsonKey(name: 'apparent_temperature')
+  String get apparentTemperature => throw _privateConstructorUsedError;
+  @JsonKey(name: 'precipitation_probability')
+  String get precipitationProbability => throw _privateConstructorUsedError;
+  @JsonKey(name: 'precipitation')
   String get precipitation => throw _privateConstructorUsedError;
+  @JsonKey(name: 'rain')
   String get rain => throw _privateConstructorUsedError;
+  @JsonKey(name: 'snowfall')
   String get snowfall => throw _privateConstructorUsedError;
+  @JsonKey(name: 'weathercode')
   String get weathercode => throw _privateConstructorUsedError;
-  String get windspeed_10m => throw _privateConstructorUsedError;
-  String get uv_index => throw _privateConstructorUsedError;
-  String get is_day => throw _privateConstructorUsedError;
+  @JsonKey(name: 'windspeed_10m')
+  String get windspeed10m => throw _privateConstructorUsedError;
+  @JsonKey(name: 'uv_index')
+  String get uvIndex => throw _privateConstructorUsedError;
+  @JsonKey(name: 'is_day')
+  String get isDay => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -48,19 +61,32 @@ abstract class $OpenMeteoHourlyUnitsDtoCopyWith<$Res> {
       _$OpenMeteoHourlyUnitsDtoCopyWithImpl<$Res, OpenMeteoHourlyUnitsDto>;
   @useResult
   $Res call(
-      {String time,
-      String temperature_2m,
-      String relativehumidity_2m,
-      String dewpoint_2m,
-      String apparent_temperature,
-      String precipitation_probability,
-      String precipitation,
-      String rain,
-      String snowfall,
-      String weathercode,
-      String windspeed_10m,
-      String uv_index,
-      String is_day});
+      {@JsonKey(name: 'time')
+          String time,
+      @JsonKey(name: 'temperature_2m')
+          String temperature2m,
+      @JsonKey(name: 'relativehumidity_2m')
+          String relativehumidity2m,
+      @JsonKey(name: 'dewpoint_2m')
+          String dewpoint2m,
+      @JsonKey(name: 'apparent_temperature')
+          String apparentTemperature,
+      @JsonKey(name: 'precipitation_probability')
+          String precipitationProbability,
+      @JsonKey(name: 'precipitation')
+          String precipitation,
+      @JsonKey(name: 'rain')
+          String rain,
+      @JsonKey(name: 'snowfall')
+          String snowfall,
+      @JsonKey(name: 'weathercode')
+          String weathercode,
+      @JsonKey(name: 'windspeed_10m')
+          String windspeed10m,
+      @JsonKey(name: 'uv_index')
+          String uvIndex,
+      @JsonKey(name: 'is_day')
+          String isDay});
 }
 
 /// @nodoc
@@ -78,43 +104,43 @@ class _$OpenMeteoHourlyUnitsDtoCopyWithImpl<$Res,
   @override
   $Res call({
     Object? time = null,
-    Object? temperature_2m = null,
-    Object? relativehumidity_2m = null,
-    Object? dewpoint_2m = null,
-    Object? apparent_temperature = null,
-    Object? precipitation_probability = null,
+    Object? temperature2m = null,
+    Object? relativehumidity2m = null,
+    Object? dewpoint2m = null,
+    Object? apparentTemperature = null,
+    Object? precipitationProbability = null,
     Object? precipitation = null,
     Object? rain = null,
     Object? snowfall = null,
     Object? weathercode = null,
-    Object? windspeed_10m = null,
-    Object? uv_index = null,
-    Object? is_day = null,
+    Object? windspeed10m = null,
+    Object? uvIndex = null,
+    Object? isDay = null,
   }) {
     return _then(_value.copyWith(
       time: null == time
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
               as String,
-      temperature_2m: null == temperature_2m
-          ? _value.temperature_2m
-          : temperature_2m // ignore: cast_nullable_to_non_nullable
+      temperature2m: null == temperature2m
+          ? _value.temperature2m
+          : temperature2m // ignore: cast_nullable_to_non_nullable
               as String,
-      relativehumidity_2m: null == relativehumidity_2m
-          ? _value.relativehumidity_2m
-          : relativehumidity_2m // ignore: cast_nullable_to_non_nullable
+      relativehumidity2m: null == relativehumidity2m
+          ? _value.relativehumidity2m
+          : relativehumidity2m // ignore: cast_nullable_to_non_nullable
               as String,
-      dewpoint_2m: null == dewpoint_2m
-          ? _value.dewpoint_2m
-          : dewpoint_2m // ignore: cast_nullable_to_non_nullable
+      dewpoint2m: null == dewpoint2m
+          ? _value.dewpoint2m
+          : dewpoint2m // ignore: cast_nullable_to_non_nullable
               as String,
-      apparent_temperature: null == apparent_temperature
-          ? _value.apparent_temperature
-          : apparent_temperature // ignore: cast_nullable_to_non_nullable
+      apparentTemperature: null == apparentTemperature
+          ? _value.apparentTemperature
+          : apparentTemperature // ignore: cast_nullable_to_non_nullable
               as String,
-      precipitation_probability: null == precipitation_probability
-          ? _value.precipitation_probability
-          : precipitation_probability // ignore: cast_nullable_to_non_nullable
+      precipitationProbability: null == precipitationProbability
+          ? _value.precipitationProbability
+          : precipitationProbability // ignore: cast_nullable_to_non_nullable
               as String,
       precipitation: null == precipitation
           ? _value.precipitation
@@ -132,17 +158,17 @@ class _$OpenMeteoHourlyUnitsDtoCopyWithImpl<$Res,
           ? _value.weathercode
           : weathercode // ignore: cast_nullable_to_non_nullable
               as String,
-      windspeed_10m: null == windspeed_10m
-          ? _value.windspeed_10m
-          : windspeed_10m // ignore: cast_nullable_to_non_nullable
+      windspeed10m: null == windspeed10m
+          ? _value.windspeed10m
+          : windspeed10m // ignore: cast_nullable_to_non_nullable
               as String,
-      uv_index: null == uv_index
-          ? _value.uv_index
-          : uv_index // ignore: cast_nullable_to_non_nullable
+      uvIndex: null == uvIndex
+          ? _value.uvIndex
+          : uvIndex // ignore: cast_nullable_to_non_nullable
               as String,
-      is_day: null == is_day
-          ? _value.is_day
-          : is_day // ignore: cast_nullable_to_non_nullable
+      isDay: null == isDay
+          ? _value.isDay
+          : isDay // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -157,19 +183,32 @@ abstract class _$$_OpenMeteoHourlyUnitsDtoCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String time,
-      String temperature_2m,
-      String relativehumidity_2m,
-      String dewpoint_2m,
-      String apparent_temperature,
-      String precipitation_probability,
-      String precipitation,
-      String rain,
-      String snowfall,
-      String weathercode,
-      String windspeed_10m,
-      String uv_index,
-      String is_day});
+      {@JsonKey(name: 'time')
+          String time,
+      @JsonKey(name: 'temperature_2m')
+          String temperature2m,
+      @JsonKey(name: 'relativehumidity_2m')
+          String relativehumidity2m,
+      @JsonKey(name: 'dewpoint_2m')
+          String dewpoint2m,
+      @JsonKey(name: 'apparent_temperature')
+          String apparentTemperature,
+      @JsonKey(name: 'precipitation_probability')
+          String precipitationProbability,
+      @JsonKey(name: 'precipitation')
+          String precipitation,
+      @JsonKey(name: 'rain')
+          String rain,
+      @JsonKey(name: 'snowfall')
+          String snowfall,
+      @JsonKey(name: 'weathercode')
+          String weathercode,
+      @JsonKey(name: 'windspeed_10m')
+          String windspeed10m,
+      @JsonKey(name: 'uv_index')
+          String uvIndex,
+      @JsonKey(name: 'is_day')
+          String isDay});
 }
 
 /// @nodoc
@@ -185,43 +224,43 @@ class __$$_OpenMeteoHourlyUnitsDtoCopyWithImpl<$Res>
   @override
   $Res call({
     Object? time = null,
-    Object? temperature_2m = null,
-    Object? relativehumidity_2m = null,
-    Object? dewpoint_2m = null,
-    Object? apparent_temperature = null,
-    Object? precipitation_probability = null,
+    Object? temperature2m = null,
+    Object? relativehumidity2m = null,
+    Object? dewpoint2m = null,
+    Object? apparentTemperature = null,
+    Object? precipitationProbability = null,
     Object? precipitation = null,
     Object? rain = null,
     Object? snowfall = null,
     Object? weathercode = null,
-    Object? windspeed_10m = null,
-    Object? uv_index = null,
-    Object? is_day = null,
+    Object? windspeed10m = null,
+    Object? uvIndex = null,
+    Object? isDay = null,
   }) {
     return _then(_$_OpenMeteoHourlyUnitsDto(
       time: null == time
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
               as String,
-      temperature_2m: null == temperature_2m
-          ? _value.temperature_2m
-          : temperature_2m // ignore: cast_nullable_to_non_nullable
+      temperature2m: null == temperature2m
+          ? _value.temperature2m
+          : temperature2m // ignore: cast_nullable_to_non_nullable
               as String,
-      relativehumidity_2m: null == relativehumidity_2m
-          ? _value.relativehumidity_2m
-          : relativehumidity_2m // ignore: cast_nullable_to_non_nullable
+      relativehumidity2m: null == relativehumidity2m
+          ? _value.relativehumidity2m
+          : relativehumidity2m // ignore: cast_nullable_to_non_nullable
               as String,
-      dewpoint_2m: null == dewpoint_2m
-          ? _value.dewpoint_2m
-          : dewpoint_2m // ignore: cast_nullable_to_non_nullable
+      dewpoint2m: null == dewpoint2m
+          ? _value.dewpoint2m
+          : dewpoint2m // ignore: cast_nullable_to_non_nullable
               as String,
-      apparent_temperature: null == apparent_temperature
-          ? _value.apparent_temperature
-          : apparent_temperature // ignore: cast_nullable_to_non_nullable
+      apparentTemperature: null == apparentTemperature
+          ? _value.apparentTemperature
+          : apparentTemperature // ignore: cast_nullable_to_non_nullable
               as String,
-      precipitation_probability: null == precipitation_probability
-          ? _value.precipitation_probability
-          : precipitation_probability // ignore: cast_nullable_to_non_nullable
+      precipitationProbability: null == precipitationProbability
+          ? _value.precipitationProbability
+          : precipitationProbability // ignore: cast_nullable_to_non_nullable
               as String,
       precipitation: null == precipitation
           ? _value.precipitation
@@ -239,17 +278,17 @@ class __$$_OpenMeteoHourlyUnitsDtoCopyWithImpl<$Res>
           ? _value.weathercode
           : weathercode // ignore: cast_nullable_to_non_nullable
               as String,
-      windspeed_10m: null == windspeed_10m
-          ? _value.windspeed_10m
-          : windspeed_10m // ignore: cast_nullable_to_non_nullable
+      windspeed10m: null == windspeed10m
+          ? _value.windspeed10m
+          : windspeed10m // ignore: cast_nullable_to_non_nullable
               as String,
-      uv_index: null == uv_index
-          ? _value.uv_index
-          : uv_index // ignore: cast_nullable_to_non_nullable
+      uvIndex: null == uvIndex
+          ? _value.uvIndex
+          : uvIndex // ignore: cast_nullable_to_non_nullable
               as String,
-      is_day: null == is_day
-          ? _value.is_day
-          : is_day // ignore: cast_nullable_to_non_nullable
+      isDay: null == isDay
+          ? _value.isDay
+          : isDay // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -259,53 +298,79 @@ class __$$_OpenMeteoHourlyUnitsDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_OpenMeteoHourlyUnitsDto implements _OpenMeteoHourlyUnitsDto {
   _$_OpenMeteoHourlyUnitsDto(
-      {required this.time,
-      required this.temperature_2m,
-      required this.relativehumidity_2m,
-      required this.dewpoint_2m,
-      required this.apparent_temperature,
-      required this.precipitation_probability,
-      required this.precipitation,
-      required this.rain,
-      required this.snowfall,
-      required this.weathercode,
-      required this.windspeed_10m,
-      required this.uv_index,
-      required this.is_day});
+      {@JsonKey(name: 'time')
+          required this.time,
+      @JsonKey(name: 'temperature_2m')
+          required this.temperature2m,
+      @JsonKey(name: 'relativehumidity_2m')
+          required this.relativehumidity2m,
+      @JsonKey(name: 'dewpoint_2m')
+          required this.dewpoint2m,
+      @JsonKey(name: 'apparent_temperature')
+          required this.apparentTemperature,
+      @JsonKey(name: 'precipitation_probability')
+          required this.precipitationProbability,
+      @JsonKey(name: 'precipitation')
+          required this.precipitation,
+      @JsonKey(name: 'rain')
+          required this.rain,
+      @JsonKey(name: 'snowfall')
+          required this.snowfall,
+      @JsonKey(name: 'weathercode')
+          required this.weathercode,
+      @JsonKey(name: 'windspeed_10m')
+          required this.windspeed10m,
+      @JsonKey(name: 'uv_index')
+          required this.uvIndex,
+      @JsonKey(name: 'is_day')
+          required this.isDay});
 
   factory _$_OpenMeteoHourlyUnitsDto.fromJson(Map<String, dynamic> json) =>
       _$$_OpenMeteoHourlyUnitsDtoFromJson(json);
 
   @override
+  @JsonKey(name: 'time')
   final String time;
   @override
-  final String temperature_2m;
+  @JsonKey(name: 'temperature_2m')
+  final String temperature2m;
   @override
-  final String relativehumidity_2m;
+  @JsonKey(name: 'relativehumidity_2m')
+  final String relativehumidity2m;
   @override
-  final String dewpoint_2m;
+  @JsonKey(name: 'dewpoint_2m')
+  final String dewpoint2m;
   @override
-  final String apparent_temperature;
+  @JsonKey(name: 'apparent_temperature')
+  final String apparentTemperature;
   @override
-  final String precipitation_probability;
+  @JsonKey(name: 'precipitation_probability')
+  final String precipitationProbability;
   @override
+  @JsonKey(name: 'precipitation')
   final String precipitation;
   @override
+  @JsonKey(name: 'rain')
   final String rain;
   @override
+  @JsonKey(name: 'snowfall')
   final String snowfall;
   @override
+  @JsonKey(name: 'weathercode')
   final String weathercode;
   @override
-  final String windspeed_10m;
+  @JsonKey(name: 'windspeed_10m')
+  final String windspeed10m;
   @override
-  final String uv_index;
+  @JsonKey(name: 'uv_index')
+  final String uvIndex;
   @override
-  final String is_day;
+  @JsonKey(name: 'is_day')
+  final String isDay;
 
   @override
   String toString() {
-    return 'OpenMeteoHourlyUnitsDto(time: $time, temperature_2m: $temperature_2m, relativehumidity_2m: $relativehumidity_2m, dewpoint_2m: $dewpoint_2m, apparent_temperature: $apparent_temperature, precipitation_probability: $precipitation_probability, precipitation: $precipitation, rain: $rain, snowfall: $snowfall, weathercode: $weathercode, windspeed_10m: $windspeed_10m, uv_index: $uv_index, is_day: $is_day)';
+    return 'OpenMeteoHourlyUnitsDto(time: $time, temperature2m: $temperature2m, relativehumidity2m: $relativehumidity2m, dewpoint2m: $dewpoint2m, apparentTemperature: $apparentTemperature, precipitationProbability: $precipitationProbability, precipitation: $precipitation, rain: $rain, snowfall: $snowfall, weathercode: $weathercode, windspeed10m: $windspeed10m, uvIndex: $uvIndex, isDay: $isDay)';
   }
 
   @override
@@ -314,17 +379,17 @@ class _$_OpenMeteoHourlyUnitsDto implements _OpenMeteoHourlyUnitsDto {
         (other.runtimeType == runtimeType &&
             other is _$_OpenMeteoHourlyUnitsDto &&
             (identical(other.time, time) || other.time == time) &&
-            (identical(other.temperature_2m, temperature_2m) ||
-                other.temperature_2m == temperature_2m) &&
-            (identical(other.relativehumidity_2m, relativehumidity_2m) ||
-                other.relativehumidity_2m == relativehumidity_2m) &&
-            (identical(other.dewpoint_2m, dewpoint_2m) ||
-                other.dewpoint_2m == dewpoint_2m) &&
-            (identical(other.apparent_temperature, apparent_temperature) ||
-                other.apparent_temperature == apparent_temperature) &&
-            (identical(other.precipitation_probability,
-                    precipitation_probability) ||
-                other.precipitation_probability == precipitation_probability) &&
+            (identical(other.temperature2m, temperature2m) ||
+                other.temperature2m == temperature2m) &&
+            (identical(other.relativehumidity2m, relativehumidity2m) ||
+                other.relativehumidity2m == relativehumidity2m) &&
+            (identical(other.dewpoint2m, dewpoint2m) ||
+                other.dewpoint2m == dewpoint2m) &&
+            (identical(other.apparentTemperature, apparentTemperature) ||
+                other.apparentTemperature == apparentTemperature) &&
+            (identical(
+                    other.precipitationProbability, precipitationProbability) ||
+                other.precipitationProbability == precipitationProbability) &&
             (identical(other.precipitation, precipitation) ||
                 other.precipitation == precipitation) &&
             (identical(other.rain, rain) || other.rain == rain) &&
@@ -332,11 +397,10 @@ class _$_OpenMeteoHourlyUnitsDto implements _OpenMeteoHourlyUnitsDto {
                 other.snowfall == snowfall) &&
             (identical(other.weathercode, weathercode) ||
                 other.weathercode == weathercode) &&
-            (identical(other.windspeed_10m, windspeed_10m) ||
-                other.windspeed_10m == windspeed_10m) &&
-            (identical(other.uv_index, uv_index) ||
-                other.uv_index == uv_index) &&
-            (identical(other.is_day, is_day) || other.is_day == is_day));
+            (identical(other.windspeed10m, windspeed10m) ||
+                other.windspeed10m == windspeed10m) &&
+            (identical(other.uvIndex, uvIndex) || other.uvIndex == uvIndex) &&
+            (identical(other.isDay, isDay) || other.isDay == isDay));
   }
 
   @JsonKey(ignore: true)
@@ -344,18 +408,18 @@ class _$_OpenMeteoHourlyUnitsDto implements _OpenMeteoHourlyUnitsDto {
   int get hashCode => Object.hash(
       runtimeType,
       time,
-      temperature_2m,
-      relativehumidity_2m,
-      dewpoint_2m,
-      apparent_temperature,
-      precipitation_probability,
+      temperature2m,
+      relativehumidity2m,
+      dewpoint2m,
+      apparentTemperature,
+      precipitationProbability,
       precipitation,
       rain,
       snowfall,
       weathercode,
-      windspeed_10m,
-      uv_index,
-      is_day);
+      windspeed10m,
+      uvIndex,
+      isDay);
 
   @JsonKey(ignore: true)
   @override
@@ -375,49 +439,75 @@ class _$_OpenMeteoHourlyUnitsDto implements _OpenMeteoHourlyUnitsDto {
 
 abstract class _OpenMeteoHourlyUnitsDto implements OpenMeteoHourlyUnitsDto {
   factory _OpenMeteoHourlyUnitsDto(
-      {required final String time,
-      required final String temperature_2m,
-      required final String relativehumidity_2m,
-      required final String dewpoint_2m,
-      required final String apparent_temperature,
-      required final String precipitation_probability,
-      required final String precipitation,
-      required final String rain,
-      required final String snowfall,
-      required final String weathercode,
-      required final String windspeed_10m,
-      required final String uv_index,
-      required final String is_day}) = _$_OpenMeteoHourlyUnitsDto;
+      {@JsonKey(name: 'time')
+          required final String time,
+      @JsonKey(name: 'temperature_2m')
+          required final String temperature2m,
+      @JsonKey(name: 'relativehumidity_2m')
+          required final String relativehumidity2m,
+      @JsonKey(name: 'dewpoint_2m')
+          required final String dewpoint2m,
+      @JsonKey(name: 'apparent_temperature')
+          required final String apparentTemperature,
+      @JsonKey(name: 'precipitation_probability')
+          required final String precipitationProbability,
+      @JsonKey(name: 'precipitation')
+          required final String precipitation,
+      @JsonKey(name: 'rain')
+          required final String rain,
+      @JsonKey(name: 'snowfall')
+          required final String snowfall,
+      @JsonKey(name: 'weathercode')
+          required final String weathercode,
+      @JsonKey(name: 'windspeed_10m')
+          required final String windspeed10m,
+      @JsonKey(name: 'uv_index')
+          required final String uvIndex,
+      @JsonKey(name: 'is_day')
+          required final String isDay}) = _$_OpenMeteoHourlyUnitsDto;
 
   factory _OpenMeteoHourlyUnitsDto.fromJson(Map<String, dynamic> json) =
       _$_OpenMeteoHourlyUnitsDto.fromJson;
 
   @override
+  @JsonKey(name: 'time')
   String get time;
   @override
-  String get temperature_2m;
+  @JsonKey(name: 'temperature_2m')
+  String get temperature2m;
   @override
-  String get relativehumidity_2m;
+  @JsonKey(name: 'relativehumidity_2m')
+  String get relativehumidity2m;
   @override
-  String get dewpoint_2m;
+  @JsonKey(name: 'dewpoint_2m')
+  String get dewpoint2m;
   @override
-  String get apparent_temperature;
+  @JsonKey(name: 'apparent_temperature')
+  String get apparentTemperature;
   @override
-  String get precipitation_probability;
+  @JsonKey(name: 'precipitation_probability')
+  String get precipitationProbability;
   @override
+  @JsonKey(name: 'precipitation')
   String get precipitation;
   @override
+  @JsonKey(name: 'rain')
   String get rain;
   @override
+  @JsonKey(name: 'snowfall')
   String get snowfall;
   @override
+  @JsonKey(name: 'weathercode')
   String get weathercode;
   @override
-  String get windspeed_10m;
+  @JsonKey(name: 'windspeed_10m')
+  String get windspeed10m;
   @override
-  String get uv_index;
+  @JsonKey(name: 'uv_index')
+  String get uvIndex;
   @override
-  String get is_day;
+  @JsonKey(name: 'is_day')
+  String get isDay;
   @override
   @JsonKey(ignore: true)
   _$$_OpenMeteoHourlyUnitsDtoCopyWith<_$_OpenMeteoHourlyUnitsDto>

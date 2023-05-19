@@ -18,18 +18,18 @@ class BoolIntConverter implements JsonConverter<bool, int> {
 @freezed
 class OpenMeteoHourlyDto with _$OpenMeteoHourlyDto {
   factory OpenMeteoHourlyDto({
-    required List<String> time,
-    required List<double?> temperature_2m,
-    required List<double?> relativehumidity_2m,
-    required List<double?> apparent_temperature,
-    required List<double?> precipitation_probability,
-    required List<double?> precipitation,
-    required List<double?> rain,
-    required List<double?> snowfall,
-    required List<int?> weathercode,
-    required List<double?> windspeed_10m,
-    required List<double?> uv_index,
-    @BoolIntConverter() required List<bool?> is_day,
+    @JsonKey(name: 'time') required List<String> time,
+    @JsonKey(name: 'temperature_2m') required List<double?> temperature2m,
+    @JsonKey(name: 'relativehumidity_2m') required List<double?> relativehumidity2m,
+    @JsonKey(name: 'apparent_temperature') required List<double?> apparentTemperature,
+    @JsonKey(name: 'precipitation_probability') required List<double?> precipitationProbability,
+    @JsonKey(name: 'precipitation') required List<double?> precipitation,
+    @JsonKey(name: 'rain') required List<double?> rain,
+    @JsonKey(name: 'snowfall') required List<double?> snowfall,
+    @JsonKey(name: 'weathercode') required List<int?> weathercode,
+    @JsonKey(name: 'windspeed_10m') required List<double?> windspeed10m,
+    @JsonKey(name: 'uv_index') required List<double?> uvIndex,
+    @BoolIntConverter() @JsonKey(name: 'is_day') required List<bool?> isDay,
   }) = _OpenMeteoHourlyDto;
 
   factory OpenMeteoHourlyDto.fromJson(Map<String, dynamic> json) => _$OpenMeteoHourlyDtoFromJson(json);

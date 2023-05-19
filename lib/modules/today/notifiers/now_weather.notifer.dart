@@ -30,23 +30,23 @@ class NowWeatherNotifier extends ChangeNotifier {
     logger.d("init");
 
     final weatherValue = weather.value;
-    if (weather.isNotInitialized || weatherValue == null || weatherValue.hourly.time.isEmpty) {
-      data.reset();
-    } else if (weather.hasError) {
+    if (weather.hasError) {
       data.error = weather.error;
+    } else if (weather.isNotInitialized || weatherValue == null || weatherValue.hourly.time.isEmpty) {
+      data.reset();
     } else {
       final now = DateTime.now().copyWith(minute: 00);
-      final formatter = DateFormat('yyyy-MM-ddTH:mm');
+      final formatter = DateFormat('yyyy-MM-ddTHH:mm');
       final formattedDate = formatter.format(now);
       final isDateExisting = weatherValue.hourly.time.any((e) => e == formattedDate);
       final index = isDateExisting ? weatherValue.hourly.time.indexOf(formattedDate) : 0;
 
       data.value = InstantWeatherInfoModel(
         timestamp: now,
-        temperature: weatherValue.hourly.temperature_2m[index],
+        temperature: weatherValue.hourly.temperature2m[index],
         weatherCode: weatherValue.hourly.weathercode[index]?.code,
-        humidity: weatherValue.hourly.relativehumidity_2m[index],
-        isDay: weatherValue.hourly.is_day[index] ?? true,
+        humidity: weatherValue.hourly.relativehumidity2m[index],
+        isDay: weatherValue.hourly.isDay[index] ?? true,
       );
     }
   }

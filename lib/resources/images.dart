@@ -195,8 +195,8 @@ class Images {
   static const String star = 'assets/images/star.json';
   static const String starryNight = 'assets/images/starry-night.json';
   static const String sunHot = 'assets/images/sun-hot.json';
-  static const String sunrise = 'assets/images/sunrise.json';
-  static const String sunset = 'assets/images/sunset.json';
+  static const String sunrise = 'assets/images/sunrise.svg';
+  static const String sunset = 'assets/images/sunset.svg';
   static const String thermometerCelsius =
       'assets/images/thermometer-celsius.json';
   static const String thermometerColder =

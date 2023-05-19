@@ -3,7 +3,7 @@ description: Demo weather app
 publish_to: 'none' 
 
 
-version: 1.0.0+1
+version: 1.0.0+3
 
 
 environment:
@@ -16,7 +16,10 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   ox_sdk:
-    path: ../../ox_sdk
+    git: 
+      ref: main
+      url: https://github.com/Romain-Guillot/ox_sdk.git
+    # path: ../../ox_sdk
   flex_color_scheme: ^7.1.2
   google_fonts: ^4.0.4
   shared_preferences: ^2.1.0
@@ -26,6 +29,9 @@ dependencies:
   lottie: ^2.3.2
   isar: ^3.1.0+1
   isar_flutter_libs: ^3.1.0+1
+  share_plus: ^6.3.1
+  cross_file: ^0.3.3+4
+  flutter_timezone: ^1.0.6
 
 
 dev_dependencies:

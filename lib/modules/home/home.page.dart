@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:ox_sdk/ox_sdk.dart';
+import 'package:weatherapp/extensions/context.extension.dart';
+import 'package:weatherapp/modules/forecast/forecast_weather.page.dart';
 import 'package:weatherapp/modules/home/notifiers/weather.notifier.dart';
-import 'package:weatherapp/modules/home/widgets/forecast_weather_card.widget.dart';
 import 'package:weatherapp/modules/location_search/widgets/location_search_bar.widget.dart';
-import 'package:weatherapp/modules/home/widgets/now_weather_card.widget.dart';
-import 'package:weatherapp/modules/home/widgets/today_weather_card.widget.dart';
+import 'package:weatherapp/modules/today/today_weather.page.dart';
 
 class HomePage extends ConsumerWidget {
   const HomePage({super.key});
@@ -54,16 +54,16 @@ class _NarrowDelegate extends StatelessWidget {
                 titleSpacing: 0.0,
                 backgroundColor: Colors.transparent,
                 floating: true,
-                title: LocationSearchBarWidget(),
+                title: const LocationSearchBarWidget(),
                 bottom: TabBar(
                   tabs: [
                     OTab(
-                      icon: Icon(Icons.today),
-                      label: Text('Now'),
+                      icon: const Icon(Icons.today),
+                      label: Text(context.strings.weatherTabNow),
                     ),
                     OTab(
-                      icon: Icon(Icons.query_stats_outlined),
-                      label: Text('Forecast'),
+                      icon: const Icon(Icons.query_stats_outlined),
+                      label: Text(context.strings.weatherTabForecast),
                     )
                   ],
                 ),
@@ -73,72 +73,11 @@ class _NarrowDelegate extends StatelessWidget {
         ],
         body: const TabBarView(
           children: [
-            TabBarViewWrapper(
-              child: TodayWeatherPageWidget(),
-            ),
-            TabBarViewWrapper(
-              child: ForecastWeatherPageWidget(),
-            ),
+            TodayWeatherPageWidget(),
+            ForecastWeatherPageWidget(),
           ],
         ),
       ),
     );
-  }
-}
-
-class TabBarViewWrapper extends StatelessWidget {
-  const TabBarViewWrapper({
-    super.key,
-    required this.child,
-  });
-
-  final Widget child;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
-    return Padding(
-      padding: EdgeInsets.only(left: theme.margins.normal, right: theme.margins.normal, bottom: theme.margins.normal),
-      child: child,
-    );
-  }
-}
-
-class TodayWeatherPageWidget extends StatelessWidget {
-  const TodayWeatherPageWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          NowWeatherCardWidget(),
-          PaddingSpacer.big(),
-          TodayWeatherCardWidget(),
-          PaddingSpacer.big(),
-          TodayWeatherCardWidget(),
-          PaddingSpacer.big(),
-          TodayWeatherCardWidget(),
-          PaddingSpacer.big(),
-          TodayWeatherCardWidget(),
-          PaddingSpacer.big(),
-          TodayWeatherCardWidget(),
-          PaddingSpacer.big(),
-          TodayWeatherCardWidget(),
-          PaddingSpacer.big(),
-          TodayWeatherCardWidget(),
-        ],
-      ),
-    );
-  }
-}
-
-class ForecastWeatherPageWidget extends StatelessWidget {
-  const ForecastWeatherPageWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SingleChildScrollView(child: ForecastWeatherCardWidget()); // TODO
   }
 }

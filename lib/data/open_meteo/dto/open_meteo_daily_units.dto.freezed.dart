@@ -23,12 +23,22 @@ OpenMeteoDailyUnitsDto _$OpenMeteoDailyUnitsDtoFromJson(
 mixin _$OpenMeteoDailyUnitsDto {
   String get time => throw _privateConstructorUsedError;
   String get weathercode => throw _privateConstructorUsedError;
-  String get temperature_2m_max => throw _privateConstructorUsedError;
-  String get temperature_2m_min => throw _privateConstructorUsedError;
-  String get uv_index_max => throw _privateConstructorUsedError;
-  String get precipitation_sum => throw _privateConstructorUsedError;
-  String get rain_sum => throw _privateConstructorUsedError;
-  String get snowfall_sum => throw _privateConstructorUsedError;
+  @JsonKey(name: 'temperature_2m_max')
+  String get temperature2mMax => throw _privateConstructorUsedError;
+  @JsonKey(name: 'temperature_2m_min')
+  String get temperature2mMin => throw _privateConstructorUsedError;
+  @JsonKey(name: 'uv_index_max')
+  String get uvIndexMax => throw _privateConstructorUsedError;
+  @JsonKey(name: 'precipitation_sum')
+  String get precipitationSum => throw _privateConstructorUsedError;
+  @JsonKey(name: 'rain_sum')
+  String get rainSum => throw _privateConstructorUsedError;
+  @JsonKey(name: 'snowfall_sum')
+  String get snowfallSum => throw _privateConstructorUsedError;
+  @JsonKey(name: 'sunrise')
+  String get sunrise => throw _privateConstructorUsedError;
+  @JsonKey(name: 'sunset')
+  String get sunset => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -45,12 +55,14 @@ abstract class $OpenMeteoDailyUnitsDtoCopyWith<$Res> {
   $Res call(
       {String time,
       String weathercode,
-      String temperature_2m_max,
-      String temperature_2m_min,
-      String uv_index_max,
-      String precipitation_sum,
-      String rain_sum,
-      String snowfall_sum});
+      @JsonKey(name: 'temperature_2m_max') String temperature2mMax,
+      @JsonKey(name: 'temperature_2m_min') String temperature2mMin,
+      @JsonKey(name: 'uv_index_max') String uvIndexMax,
+      @JsonKey(name: 'precipitation_sum') String precipitationSum,
+      @JsonKey(name: 'rain_sum') String rainSum,
+      @JsonKey(name: 'snowfall_sum') String snowfallSum,
+      @JsonKey(name: 'sunrise') String sunrise,
+      @JsonKey(name: 'sunset') String sunset});
 }
 
 /// @nodoc
@@ -69,12 +81,14 @@ class _$OpenMeteoDailyUnitsDtoCopyWithImpl<$Res,
   $Res call({
     Object? time = null,
     Object? weathercode = null,
-    Object? temperature_2m_max = null,
-    Object? temperature_2m_min = null,
-    Object? uv_index_max = null,
-    Object? precipitation_sum = null,
-    Object? rain_sum = null,
-    Object? snowfall_sum = null,
+    Object? temperature2mMax = null,
+    Object? temperature2mMin = null,
+    Object? uvIndexMax = null,
+    Object? precipitationSum = null,
+    Object? rainSum = null,
+    Object? snowfallSum = null,
+    Object? sunrise = null,
+    Object? sunset = null,
   }) {
     return _then(_value.copyWith(
       time: null == time
@@ -85,29 +99,37 @@ class _$OpenMeteoDailyUnitsDtoCopyWithImpl<$Res,
           ? _value.weathercode
           : weathercode // ignore: cast_nullable_to_non_nullable
               as String,
-      temperature_2m_max: null == temperature_2m_max
-          ? _value.temperature_2m_max
-          : temperature_2m_max // ignore: cast_nullable_to_non_nullable
+      temperature2mMax: null == temperature2mMax
+          ? _value.temperature2mMax
+          : temperature2mMax // ignore: cast_nullable_to_non_nullable
               as String,
-      temperature_2m_min: null == temperature_2m_min
-          ? _value.temperature_2m_min
-          : temperature_2m_min // ignore: cast_nullable_to_non_nullable
+      temperature2mMin: null == temperature2mMin
+          ? _value.temperature2mMin
+          : temperature2mMin // ignore: cast_nullable_to_non_nullable
               as String,
-      uv_index_max: null == uv_index_max
-          ? _value.uv_index_max
-          : uv_index_max // ignore: cast_nullable_to_non_nullable
+      uvIndexMax: null == uvIndexMax
+          ? _value.uvIndexMax
+          : uvIndexMax // ignore: cast_nullable_to_non_nullable
               as String,
-      precipitation_sum: null == precipitation_sum
-          ? _value.precipitation_sum
-          : precipitation_sum // ignore: cast_nullable_to_non_nullable
+      precipitationSum: null == precipitationSum
+          ? _value.precipitationSum
+          : precipitationSum // ignore: cast_nullable_to_non_nullable
               as String,
-      rain_sum: null == rain_sum
-          ? _value.rain_sum
-          : rain_sum // ignore: cast_nullable_to_non_nullable
+      rainSum: null == rainSum
+          ? _value.rainSum
+          : rainSum // ignore: cast_nullable_to_non_nullable
               as String,
-      snowfall_sum: null == snowfall_sum
-          ? _value.snowfall_sum
-          : snowfall_sum // ignore: cast_nullable_to_non_nullable
+      snowfallSum: null == snowfallSum
+          ? _value.snowfallSum
+          : snowfallSum // ignore: cast_nullable_to_non_nullable
+              as String,
+      sunrise: null == sunrise
+          ? _value.sunrise
+          : sunrise // ignore: cast_nullable_to_non_nullable
+              as String,
+      sunset: null == sunset
+          ? _value.sunset
+          : sunset // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -124,12 +146,14 @@ abstract class _$$_OpenMeteoDailyUnitsDtoCopyWith<$Res>
   $Res call(
       {String time,
       String weathercode,
-      String temperature_2m_max,
-      String temperature_2m_min,
-      String uv_index_max,
-      String precipitation_sum,
-      String rain_sum,
-      String snowfall_sum});
+      @JsonKey(name: 'temperature_2m_max') String temperature2mMax,
+      @JsonKey(name: 'temperature_2m_min') String temperature2mMin,
+      @JsonKey(name: 'uv_index_max') String uvIndexMax,
+      @JsonKey(name: 'precipitation_sum') String precipitationSum,
+      @JsonKey(name: 'rain_sum') String rainSum,
+      @JsonKey(name: 'snowfall_sum') String snowfallSum,
+      @JsonKey(name: 'sunrise') String sunrise,
+      @JsonKey(name: 'sunset') String sunset});
 }
 
 /// @nodoc
@@ -146,12 +170,14 @@ class __$$_OpenMeteoDailyUnitsDtoCopyWithImpl<$Res>
   $Res call({
     Object? time = null,
     Object? weathercode = null,
-    Object? temperature_2m_max = null,
-    Object? temperature_2m_min = null,
-    Object? uv_index_max = null,
-    Object? precipitation_sum = null,
-    Object? rain_sum = null,
-    Object? snowfall_sum = null,
+    Object? temperature2mMax = null,
+    Object? temperature2mMin = null,
+    Object? uvIndexMax = null,
+    Object? precipitationSum = null,
+    Object? rainSum = null,
+    Object? snowfallSum = null,
+    Object? sunrise = null,
+    Object? sunset = null,
   }) {
     return _then(_$_OpenMeteoDailyUnitsDto(
       time: null == time
@@ -162,29 +188,37 @@ class __$$_OpenMeteoDailyUnitsDtoCopyWithImpl<$Res>
           ? _value.weathercode
           : weathercode // ignore: cast_nullable_to_non_nullable
               as String,
-      temperature_2m_max: null == temperature_2m_max
-          ? _value.temperature_2m_max
-          : temperature_2m_max // ignore: cast_nullable_to_non_nullable
+      temperature2mMax: null == temperature2mMax
+          ? _value.temperature2mMax
+          : temperature2mMax // ignore: cast_nullable_to_non_nullable
               as String,
-      temperature_2m_min: null == temperature_2m_min
-          ? _value.temperature_2m_min
-          : temperature_2m_min // ignore: cast_nullable_to_non_nullable
+      temperature2mMin: null == temperature2mMin
+          ? _value.temperature2mMin
+          : temperature2mMin // ignore: cast_nullable_to_non_nullable
               as String,
-      uv_index_max: null == uv_index_max
-          ? _value.uv_index_max
-          : uv_index_max // ignore: cast_nullable_to_non_nullable
+      uvIndexMax: null == uvIndexMax
+          ? _value.uvIndexMax
+          : uvIndexMax // ignore: cast_nullable_to_non_nullable
               as String,
-      precipitation_sum: null == precipitation_sum
-          ? _value.precipitation_sum
-          : precipitation_sum // ignore: cast_nullable_to_non_nullable
+      precipitationSum: null == precipitationSum
+          ? _value.precipitationSum
+          : precipitationSum // ignore: cast_nullable_to_non_nullable
               as String,
-      rain_sum: null == rain_sum
-          ? _value.rain_sum
-          : rain_sum // ignore: cast_nullable_to_non_nullable
+      rainSum: null == rainSum
+          ? _value.rainSum
+          : rainSum // ignore: cast_nullable_to_non_nullable
               as String,
-      snowfall_sum: null == snowfall_sum
-          ? _value.snowfall_sum
-          : snowfall_sum // ignore: cast_nullable_to_non_nullable
+      snowfallSum: null == snowfallSum
+          ? _value.snowfallSum
+          : snowfallSum // ignore: cast_nullable_to_non_nullable
+              as String,
+      sunrise: null == sunrise
+          ? _value.sunrise
+          : sunrise // ignore: cast_nullable_to_non_nullable
+              as String,
+      sunset: null == sunset
+          ? _value.sunset
+          : sunset // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -196,12 +230,14 @@ class _$_OpenMeteoDailyUnitsDto implements _OpenMeteoDailyUnitsDto {
   _$_OpenMeteoDailyUnitsDto(
       {required this.time,
       required this.weathercode,
-      required this.temperature_2m_max,
-      required this.temperature_2m_min,
-      required this.uv_index_max,
-      required this.precipitation_sum,
-      required this.rain_sum,
-      required this.snowfall_sum});
+      @JsonKey(name: 'temperature_2m_max') required this.temperature2mMax,
+      @JsonKey(name: 'temperature_2m_min') required this.temperature2mMin,
+      @JsonKey(name: 'uv_index_max') required this.uvIndexMax,
+      @JsonKey(name: 'precipitation_sum') required this.precipitationSum,
+      @JsonKey(name: 'rain_sum') required this.rainSum,
+      @JsonKey(name: 'snowfall_sum') required this.snowfallSum,
+      @JsonKey(name: 'sunrise') required this.sunrise,
+      @JsonKey(name: 'sunset') required this.sunset});
 
   factory _$_OpenMeteoDailyUnitsDto.fromJson(Map<String, dynamic> json) =>
       _$$_OpenMeteoDailyUnitsDtoFromJson(json);
@@ -211,21 +247,33 @@ class _$_OpenMeteoDailyUnitsDto implements _OpenMeteoDailyUnitsDto {
   @override
   final String weathercode;
   @override
-  final String temperature_2m_max;
+  @JsonKey(name: 'temperature_2m_max')
+  final String temperature2mMax;
   @override
-  final String temperature_2m_min;
+  @JsonKey(name: 'temperature_2m_min')
+  final String temperature2mMin;
   @override
-  final String uv_index_max;
+  @JsonKey(name: 'uv_index_max')
+  final String uvIndexMax;
   @override
-  final String precipitation_sum;
+  @JsonKey(name: 'precipitation_sum')
+  final String precipitationSum;
   @override
-  final String rain_sum;
+  @JsonKey(name: 'rain_sum')
+  final String rainSum;
   @override
-  final String snowfall_sum;
+  @JsonKey(name: 'snowfall_sum')
+  final String snowfallSum;
+  @override
+  @JsonKey(name: 'sunrise')
+  final String sunrise;
+  @override
+  @JsonKey(name: 'sunset')
+  final String sunset;
 
   @override
   String toString() {
-    return 'OpenMeteoDailyUnitsDto(time: $time, weathercode: $weathercode, temperature_2m_max: $temperature_2m_max, temperature_2m_min: $temperature_2m_min, uv_index_max: $uv_index_max, precipitation_sum: $precipitation_sum, rain_sum: $rain_sum, snowfall_sum: $snowfall_sum)';
+    return 'OpenMeteoDailyUnitsDto(time: $time, weathercode: $weathercode, temperature2mMax: $temperature2mMax, temperature2mMin: $temperature2mMin, uvIndexMax: $uvIndexMax, precipitationSum: $precipitationSum, rainSum: $rainSum, snowfallSum: $snowfallSum, sunrise: $sunrise, sunset: $sunset)';
   }
 
   @override
@@ -236,18 +284,19 @@ class _$_OpenMeteoDailyUnitsDto implements _OpenMeteoDailyUnitsDto {
             (identical(other.time, time) || other.time == time) &&
             (identical(other.weathercode, weathercode) ||
                 other.weathercode == weathercode) &&
-            (identical(other.temperature_2m_max, temperature_2m_max) ||
-                other.temperature_2m_max == temperature_2m_max) &&
-            (identical(other.temperature_2m_min, temperature_2m_min) ||
-                other.temperature_2m_min == temperature_2m_min) &&
-            (identical(other.uv_index_max, uv_index_max) ||
-                other.uv_index_max == uv_index_max) &&
-            (identical(other.precipitation_sum, precipitation_sum) ||
-                other.precipitation_sum == precipitation_sum) &&
-            (identical(other.rain_sum, rain_sum) ||
-                other.rain_sum == rain_sum) &&
-            (identical(other.snowfall_sum, snowfall_sum) ||
-                other.snowfall_sum == snowfall_sum));
+            (identical(other.temperature2mMax, temperature2mMax) ||
+                other.temperature2mMax == temperature2mMax) &&
+            (identical(other.temperature2mMin, temperature2mMin) ||
+                other.temperature2mMin == temperature2mMin) &&
+            (identical(other.uvIndexMax, uvIndexMax) ||
+                other.uvIndexMax == uvIndexMax) &&
+            (identical(other.precipitationSum, precipitationSum) ||
+                other.precipitationSum == precipitationSum) &&
+            (identical(other.rainSum, rainSum) || other.rainSum == rainSum) &&
+            (identical(other.snowfallSum, snowfallSum) ||
+                other.snowfallSum == snowfallSum) &&
+            (identical(other.sunrise, sunrise) || other.sunrise == sunrise) &&
+            (identical(other.sunset, sunset) || other.sunset == sunset));
   }
 
   @JsonKey(ignore: true)
@@ -256,12 +305,14 @@ class _$_OpenMeteoDailyUnitsDto implements _OpenMeteoDailyUnitsDto {
       runtimeType,
       time,
       weathercode,
-      temperature_2m_max,
-      temperature_2m_min,
-      uv_index_max,
-      precipitation_sum,
-      rain_sum,
-      snowfall_sum);
+      temperature2mMax,
+      temperature2mMin,
+      uvIndexMax,
+      precipitationSum,
+      rainSum,
+      snowfallSum,
+      sunrise,
+      sunset);
 
   @JsonKey(ignore: true)
   @override
@@ -282,12 +333,22 @@ abstract class _OpenMeteoDailyUnitsDto implements OpenMeteoDailyUnitsDto {
   factory _OpenMeteoDailyUnitsDto(
       {required final String time,
       required final String weathercode,
-      required final String temperature_2m_max,
-      required final String temperature_2m_min,
-      required final String uv_index_max,
-      required final String precipitation_sum,
-      required final String rain_sum,
-      required final String snowfall_sum}) = _$_OpenMeteoDailyUnitsDto;
+      @JsonKey(name: 'temperature_2m_max')
+          required final String temperature2mMax,
+      @JsonKey(name: 'temperature_2m_min')
+          required final String temperature2mMin,
+      @JsonKey(name: 'uv_index_max')
+          required final String uvIndexMax,
+      @JsonKey(name: 'precipitation_sum')
+          required final String precipitationSum,
+      @JsonKey(name: 'rain_sum')
+          required final String rainSum,
+      @JsonKey(name: 'snowfall_sum')
+          required final String snowfallSum,
+      @JsonKey(name: 'sunrise')
+          required final String sunrise,
+      @JsonKey(name: 'sunset')
+          required final String sunset}) = _$_OpenMeteoDailyUnitsDto;
 
   factory _OpenMeteoDailyUnitsDto.fromJson(Map<String, dynamic> json) =
       _$_OpenMeteoDailyUnitsDto.fromJson;
@@ -297,17 +358,29 @@ abstract class _OpenMeteoDailyUnitsDto implements OpenMeteoDailyUnitsDto {
   @override
   String get weathercode;
   @override
-  String get temperature_2m_max;
+  @JsonKey(name: 'temperature_2m_max')
+  String get temperature2mMax;
   @override
-  String get temperature_2m_min;
+  @JsonKey(name: 'temperature_2m_min')
+  String get temperature2mMin;
   @override
-  String get uv_index_max;
+  @JsonKey(name: 'uv_index_max')
+  String get uvIndexMax;
   @override
-  String get precipitation_sum;
+  @JsonKey(name: 'precipitation_sum')
+  String get precipitationSum;
   @override
-  String get rain_sum;
+  @JsonKey(name: 'rain_sum')
+  String get rainSum;
   @override
-  String get snowfall_sum;
+  @JsonKey(name: 'snowfall_sum')
+  String get snowfallSum;
+  @override
+  @JsonKey(name: 'sunrise')
+  String get sunrise;
+  @override
+  @JsonKey(name: 'sunset')
+  String get sunset;
   @override
   @JsonKey(ignore: true)
   _$$_OpenMeteoDailyUnitsDtoCopyWith<_$_OpenMeteoDailyUnitsDto> get copyWith =>

@@ -1,3 +1,4 @@
+import 'package:flutter_timezone/flutter_timezone.dart';
 import 'package:ox_sdk/ox_sdk.dart';
 import 'package:weatherapp/data/open_meteo/open_meteo.api.dart';
 import 'package:weatherapp/models/weather.model.dart';
@@ -17,15 +18,16 @@ class OpenMeteoWeatherRepository implements WeatherRepository {
     required double lat,
     required double lon,
   }) async {
+    final timeZone = await FlutterTimezone.getLocalTimezone();
     final weather = await callApiOrThrow(
       () => api.get(
         latitude: lat,
         longitude: lon,
-        forecastDays: 14,
-        timezone: "Europe/London", // TODO(RGU)
+        forecastDays: 16,
+        timezone: timeZone,
         hourly:
             "temperature_2m,relativehumidity_2m,dewpoint_2m,apparent_temperature,precipitation_probability,precipitation,rain,snowfall,weathercode,windspeed_10m,uv_index,is_day",
-        daily: "weathercode,temperature_2m_max,temperature_2m_min,uv_index_max,precipitation_sum,rain_sum,snowfall_sum",
+        daily: "weathercode,temperature_2m_max,temperature_2m_min,uv_index_max,precipitation_sum,rain_sum,snowfall_sum,sunrise,sunset",
       ),
     );
 

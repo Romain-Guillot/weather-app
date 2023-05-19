@@ -30,10 +30,10 @@ class ForecastWeatherNotifier extends ChangeNotifier {
     logger.d("init");
 
     final weatherValue = weather.value;
-    if (weather.isNotInitialized || weatherValue == null || weatherValue.hourly.time.isEmpty) {
-      data.reset();
-    } else if (weather.hasError) {
+    if (weather.hasError) {
       data.error = weather.error;
+    } else if (weather.isNotInitialized || weatherValue == null || weatherValue.hourly.time.isEmpty) {
+      data.reset();
     } else {
       final instantWeatherInfoModels = <ForecastWeatherInfoModel>[];
       for (final rawTimestamp in weatherValue.daily.time) {
@@ -43,12 +43,12 @@ class ForecastWeatherNotifier extends ChangeNotifier {
 
         instantWeatherInfoModels.add(ForecastWeatherInfoModel(
           timestamp: timestamp,
-          maxTemperature: weatherValue.daily.temperature_2m_max[index],
-          minTemperature: weatherValue.daily.temperature_2m_min[index],
-          maxUvIndex: weatherValue.daily.uv_index_max[index],
-          snowFallSum: weatherValue.daily.snowfall_sum[index],
-          rainSum: weatherValue.daily.rain_sum[index],
-          precipitationSum: weatherValue.daily.precipitation_sum[index],
+          maxTemperature: weatherValue.daily.temperature2mMax[index],
+          minTemperature: weatherValue.daily.temperature2mMin[index],
+          maxUvIndex: weatherValue.daily.uvIndexMax[index],
+          snowFallSum: weatherValue.daily.snowfallSum[index],
+          rainSum: weatherValue.daily.rainSum[index],
+          precipitationSum: weatherValue.daily.precipitationSum[index],
           weatherCode: weatherValue.daily.weathercode[index]?.code,
         ));
       }

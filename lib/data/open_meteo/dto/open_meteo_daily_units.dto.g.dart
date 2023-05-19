@@ -11,12 +11,14 @@ _$_OpenMeteoDailyUnitsDto _$$_OpenMeteoDailyUnitsDtoFromJson(
     _$_OpenMeteoDailyUnitsDto(
       time: json['time'] as String,
       weathercode: json['weathercode'] as String,
-      temperature_2m_max: json['temperature_2m_max'] as String,
-      temperature_2m_min: json['temperature_2m_min'] as String,
-      uv_index_max: json['uv_index_max'] as String,
-      precipitation_sum: json['precipitation_sum'] as String,
-      rain_sum: json['rain_sum'] as String,
-      snowfall_sum: json['snowfall_sum'] as String,
+      temperature2mMax: json['temperature_2m_max'] as String,
+      temperature2mMin: json['temperature_2m_min'] as String,
+      uvIndexMax: json['uv_index_max'] as String,
+      precipitationSum: json['precipitation_sum'] as String,
+      rainSum: json['rain_sum'] as String,
+      snowfallSum: json['snowfall_sum'] as String,
+      sunrise: json['sunrise'] as String,
+      sunset: json['sunset'] as String,
     );
 
 Map<String, dynamic> _$$_OpenMeteoDailyUnitsDtoToJson(
@@ -24,10 +26,12 @@ Map<String, dynamic> _$$_OpenMeteoDailyUnitsDtoToJson(
     <String, dynamic>{
       'time': instance.time,
       'weathercode': instance.weathercode,
-      'temperature_2m_max': instance.temperature_2m_max,
-      'temperature_2m_min': instance.temperature_2m_min,
-      'uv_index_max': instance.uv_index_max,
-      'precipitation_sum': instance.precipitation_sum,
-      'rain_sum': instance.rain_sum,
-      'snowfall_sum': instance.snowfall_sum,
+      'temperature_2m_max': instance.temperature2mMax,
+      'temperature_2m_min': instance.temperature2mMin,
+      'uv_index_max': instance.uvIndexMax,
+      'precipitation_sum': instance.precipitationSum,
+      'rain_sum': instance.rainSum,
+      'snowfall_sum': instance.snowfallSum,
+      'sunrise': instance.sunrise,
+      'sunset': instance.sunset,
     };

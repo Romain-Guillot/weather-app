@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ox_sdk/ox_sdk.dart';
+import 'package:weatherapp/extensions/context.extension.dart';
 import 'package:weatherapp/modules/settings/notifiers/language.notifier.dart';
 import 'package:weatherapp/resources/icons.dart';
 
@@ -13,7 +14,7 @@ class SettingsLanguageTileWidget extends StatelessWidget {
       hasContentPadding: true,
       title: OTitle(
         icon: const Icon(AppIcons.language),
-        label: Text('Language'),
+        label: Text(context.strings.settingsLanguageTitle),
       ),
       child: const _LanguagesDropdown(),
     );

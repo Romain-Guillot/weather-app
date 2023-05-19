@@ -3,7 +3,7 @@ import 'package:ox_sdk/ox_sdk.dart';
 import 'package:weatherapp/core/widgets/app_card.dart';
 import 'package:weatherapp/core/widgets/weather_code_icon.widget.dart';
 import 'package:weatherapp/models/forecast_weather_info.model.dart';
-import 'package:weatherapp/modules/home/notifiers/forecast_weather.notifier.dart';
+import 'package:weatherapp/modules/forecast/notifiers/forecast_weather.notifier.dart';
 
 class ForecastWeatherCardWidget extends ConsumerWidget {
   const ForecastWeatherCardWidget({super.key});

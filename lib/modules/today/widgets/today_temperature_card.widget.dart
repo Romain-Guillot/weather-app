@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:ox_sdk/ox_sdk.dart';
 import 'package:weatherapp/core/widgets/app_card.dart';
 import 'package:weatherapp/core/widgets/weather_code_icon.widget.dart';
+import 'package:weatherapp/extensions/context.extension.dart';
 import 'package:weatherapp/models/instant_weather_info.model.dart';
-import 'package:weatherapp/modules/home/notifiers/today_weather.notifier.dart';
+import 'package:weatherapp/modules/today/notifiers/today_weather.notifier.dart';
 import 'package:weatherapp/resources/icons.dart';
 
 double _kInstantItemWidth = 65.0;
@@ -12,31 +13,14 @@ double _kHeaderLabelWidth = 100.0;
 double _kNumberOfHoursInADay = 24.0;
 double _kHeaderHeight = 35.0;
 
-extension ListExtension<T> on List<T> {
-  List<T> removeFollowingDuplicates() {
-    final result = <T>[];
-    if (isNotEmpty) {
-      result.add(first);
-    }
-
-    for (final e in sublist(1)) {
-      if (result.last != e) {
-        result.add(e);
-      }
-    }
-
-    return result;
-  }
-}
-
-class TodayWeatherCardWidget extends ConsumerStatefulWidget {
-  const TodayWeatherCardWidget({super.key});
+class TodayTemperatureCardWidget extends ConsumerStatefulWidget {
+  const TodayTemperatureCardWidget({super.key});
 
   @override
-  ConsumerState<TodayWeatherCardWidget> createState() => _TodayWeatherCardWidgetState();
+  ConsumerState<TodayTemperatureCardWidget> createState() => _TodayTemperatureCardWidgetState();
 }
 
-class _TodayWeatherCardWidgetState extends ConsumerState<TodayWeatherCardWidget> {
+class _TodayTemperatureCardWidgetState extends ConsumerState<TodayTemperatureCardWidget> {
   final headerScrollController = ScrollController();
   final primaryScrollController = ScrollController();
 
@@ -57,7 +41,7 @@ class _TodayWeatherCardWidgetState extends ConsumerState<TodayWeatherCardWidget>
         primaryScrollController.animateTo(
           nowIndex * _kInstantItemWidth,
           duration: const Duration(milliseconds: 150),
-          curve: Curves.easeOutBack,
+          curve: Curves.elasticOut,
         );
       }
     });
@@ -73,7 +57,7 @@ class _TodayWeatherCardWidgetState extends ConsumerState<TodayWeatherCardWidget>
     });
 
     return AppCardWiget(
-      title: Text('Temperature'),
+      title: Text(context.strings.temperatureTitle),
       action: IconButton(
         onPressed: onReinitPosition,
         icon: const Icon(AppIcons.reinit),
@@ -186,13 +170,11 @@ class _InstantItemWidget extends StatelessWidget {
             isDay: isDay,
           )
         else
-          SizedBox(height: 45),
+          const SizedBox(height: 45),
         if (temperature != null)
           DefaultTextStyle.merge(
             style: theme.textTheme.labelSmall,
-            child: Text(
-              temperature.toString() + " °C", // TODO(RGU)
-            ),
+            child: Text(context.strings.temperatureFormattedValue(temperature)),
           ),
       ],
     );

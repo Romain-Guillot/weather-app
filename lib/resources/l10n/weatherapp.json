@@ -2,5 +2,177 @@
     "appName": {
         "value": "Weather app",
         "context": "Title label to describe a weather application"
+    },
+    "noPlaceFound": {
+        "value": "No place found",
+        "context": "Label to indicate the user that no place (geographical location) was found base on his search query"
+    },
+    "loading": {
+        "value": "Loading...",
+        "context": "Label to indicate something is currently in loading"
+    },
+    "locationSearchHint": {
+        "value": "Location",
+        "context": "Test field hint to search a place or a location"
+    },
+    "useCurrentPosition": {
+        "value": "Use current position",
+        "context": "BUtton label to use the user GPS location"
+    },
+    "searchHistoryLabel": {
+        "value": "History",
+        "context": "Title label for the search places user history"
+    },
+    "weatherTabNow": {
+        "value": "Now",
+        "context": "Tab label to visualize the current weather in realtime"
+    },
+    "weatherTabForecast": {
+        "value": "Forecast",
+        "context": "Tab label to visualize the forecast weather for the nest days"
+    },
+    "temperatureFormattedValue": {
+        "value": "{temperature} °C",
+        "translate": false
+    },
+    "temperatureTitle": {
+        "value": "Temperature",
+        "context": "Title label for temperature visualization"
+    },
+    "noHistory": {
+        "value": "No history",
+        "context": "Label to indicate the user has no place history saved"
+    },
+    "settingsDeveloperMode": {
+        "value": "Developer page",
+        "context": "Title label to open the developer page with some logs, device information and so on"
+    },
+    "settingsLanguageTitle": {
+        "value": "Language",
+        "context": "Title label to change the application language (french, english, etc)"
+    },
+    "settingsAppSettings": {
+        "value": "Settings",
+        "context": "Title label for the application settings"
+    },
+    "excUnableToShareWeather": {
+        "value": "Unable to share the current weather",
+        "context": "Exception message to warn the user that an error occured during the sharing process"
+    },
+    "clearSky": {
+      "value": "Clear sky",
+      "context": "Weather label to describe a situation where the sky is completely clear (no clouds)"
+    },
+    "partlyCloudy": {
+      "value": "Partly cloudy",
+      "context": "Weather label to describe a situation with some clouds in the sky"
+    },
+    "cloudy": {
+      "value": "Cloudy",
+      "context": "Weather label to describe a situation with a significant amount of clouds covering the sky"
+    },
+    "overcast": {
+      "value": "Overcast",
+      "context": "Weather label to describe a situation with complete cloud cover, often appearing gray or dull"
+    },
+    "fog": {
+      "value": "Fog",
+      "context": "Weather label to describe a situation where visibility is significantly reduced due to fog"
+    },
+    "depositingRimeFog": {
+      "value": "Depositing rime fog",
+      "context": "Weather label to describe a situation where fog results in the deposition of rime on surfaces"
+    },
+    "lightDrizzle": {
+      "value": "Light drizzle",
+      "context": "Weather label to describe a situation with light, fine raindrops"
+    },
+    "moderateDrizzle": {
+      "value": "Moderate drizzle",
+      "context": "Weather label to describe a situation with a medium intensity of fine raindrops"
+    },
+    "denseDrizzle": {
+      "value": "Dense drizzle",
+      "context": "Weather label to describe a situation with a high concentration of fine raindrops"
+    },
+    "freezingLightDrizzle": {
+      "value": "Freezing light drizzle",
+      "context": "Weather label to describe a situation with light drizzle that freezes upon contact with surfaces"
+    },
+    "freezingMediumDrizzle": {
+      "value": "Freezing moderate drizzle",
+      "context": "Weather label to describe a situation with a medium intensity of drizzle that freezes upon contact with surfaces"
+    },
+    "slightRain": {
+      "value": "Slight rain",
+      "context": "Weather label to describe a situation with light rainfall"
+    },
+    "moderateRain": {
+      "value": "Moderate rain",
+      "context": "Weather label to describe a situation with a medium intensity of rainfall"
+    },
+    "heavyRain": {
+      "value": "Heavy rain",
+      "context": "Weather label to describe a situation with intense or heavy rainfall"
+    },
+    "freezingLightRain": {
+      "value": "Freezing light rain",
+      "context": "Weather label to describe a situation with light rain that freezes upon contact with surfaces"
+    },
+    "freezingHeavyRain": {
+      "value": "Freezing heavy rain",
+      "context": "Weather label to describe a situation with heavy rain that freezes upon contact with surfaces"
+    },
+    "slightSnowFall": {
+      "value": "Slight snowfall",
+      "context": "Weather label to describe a situation with light snowfall"
+    },
+    "moderateSnowFall": {
+      "value": "Moderate snowfall",
+      "context": "Weather label to describe a situation with a medium intensity of snowfall"
+    },
+    "heavySnowFall": {
+      "value": "Heavy snowfall",
+      "context": "Weather label to describe a situation with intense or heavy snowfall"
+    },
+    "snowGrains": {
+      "value": "Snow grains",
+      "context": "Weather label to describe a situation with very small, white ice particles falling from the sky"
+    },
+    "slightRainShower": {
+      "value": "Slight rain showers",
+      "context": "Weather label to describe a situation with light rain showers"
+    },
+    "moderateRainShower": {
+      "value": "Moderate rain showers",
+      "context": "Weather label to describe a situation with a medium intensity of rain showers"
+    },
+    "violentRainShower": {
+      "value": "Violent rain shower",
+      "context": "Weather label to describe a situation with a sudden and intense rain shower"
+    },
+    "slightSnowShowers": {
+      "value": "Slight snow showers",
+      "context": "Weather label to describe a situation with light snow showers"
+    },
+    "heavySnowShowers": {
+      "value": "Heavy snow showers",
+      "context": "Weather label to describe a situation with intense or heavy snow showers"
+    },
+    "thunderstorm": {
+      "value": "Thunderstorm",
+      "context": "Weather label to describe a situation with thunder, lightning, and rainfall"
+    },
+    "slightThunderstormWithHail": {
+      "value": "Thunderstorm with slight hail",
+      "context": "Weather label to describe a situation with thunder, lightning, rainfall, and slight hail"
+    },
+    "heavyThunderstromWithHail": {
+      "value": "Thunderstorm with heavy hail",
+      "context": "Weather label to describe a situation with thunder, lightning, rainfall, and heavy hail"
+    },
+    "iconSettingsDescription": {
+      "value": "Wheater icons",
+      "context": "Settings page to describe weather icons (cloud for a cloudy day, ...)"
     }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ox_sdk/ox_sdk.dart';
 import 'package:weatherapp/core/models/geocoding_place.model.dart';
+import 'package:weatherapp/extensions/context.extension.dart';
 import 'package:weatherapp/models/history_entry.model.dart';
 import 'package:weatherapp/modules/home/notifiers/location.weather.notifier.dart';
 import 'package:weatherapp/modules/location_search/notifiers/search_history.notifier.dart';
@@ -69,7 +70,7 @@ class _LocationSearchBarWidgetState extends ConsumerState<LocationSearchBarWidge
 
     return SearchAnchor.bar(
       searchController: controller,
-      viewHintText: 'Location',
+      viewHintText: context.strings.locationSearchHint,
       barTrailing: const [
         SettingsIconButtonWidget(),
       ],
@@ -77,12 +78,12 @@ class _LocationSearchBarWidgetState extends ConsumerState<LocationSearchBarWidge
         onPressed: () => goBack(notifier),
       ),
       suggestionsBuilder: (context, controller) {
-        // not async for now: https://github.com/flutter/flutter/pull/127019
+        // TODO(RGU) not async for now: https://github.com/flutter/flutter/pull/127019
         return [
           ListTile(
             onTap: () => onCurrentLocation(notifier),
             leading: const Icon(AppIcons.currentLocation),
-            title: Text('Use current position'),
+            title: Text(context.strings.useCurrentPosition),
           ),
           _PlacesSuggestionBuilder(
             address: controller.text,
@@ -92,7 +93,7 @@ class _LocationSearchBarWidgetState extends ConsumerState<LocationSearchBarWidge
           Padding(
             padding: EdgeInsets.all(theme.paddings.medium),
             child: Text(
-              'History',
+              context.strings.searchHistoryLabel,
               style: theme.textTheme.titleMedium,
             ),
           ),
@@ -120,20 +121,18 @@ class _PlacesSuggestionBuilder extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final notifier = ref.watch(searchLocationNotifierProvider(address));
 
-    return ProviderValueBuilder<List<GeocodingPlace>, AppException>(
+    return ProviderValueBuilder(
       value: notifier.places,
       emptyDataBuilder: (context) => ListTile(
         leading: const Icon(Icons.search_off_outlined),
         title: DefaultTextStyle.merge(
-          style: TextStyle(fontStyle: FontStyle.italic),
-          child: Text(
-            'No place found',
-          ),
+          style: const TextStyle(fontStyle: FontStyle.italic),
+          child: Text(context.strings.noPlaceFound),
         ),
       ),
       loadingBuilder: (context) => ListTile(
-        leading: OLoader(size: OLoaderSize.small),
-        title: Text('Loading ...'),
+        leading: const OLoader(size: OLoaderSize.small),
+        title: Text(context.strings.loading),
       ),
       dataBuilder: (context, places) => ListView(
         physics: const NeverScrollableScrollPhysics(),

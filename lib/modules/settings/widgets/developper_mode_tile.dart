@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ox_sdk/ox_sdk.dart';
+import 'package:weatherapp/extensions/context.extension.dart';
 import 'package:weatherapp/resources/icons.dart';
 import 'package:weatherapp/router.dart';
 
@@ -18,7 +19,7 @@ class DeveloperModeTileWidget extends StatelessWidget {
       hasContentPadding: true,
       title: OTitle(
         icon: const Icon(AppIcons.developerMode),
-        label: Text('Developer page'),
+        label: Text(context.strings.settingsDeveloperMode),
       ),
     );
   }

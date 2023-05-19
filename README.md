@@ -34,7 +34,7 @@ Environment variables are injected in the app through the `dart-define` build/ru
 | Argument | Example |
 |---|---|
 | SENTRY_ENABLED | false |
-| SENTRY_ENSENTRY_URLABLED | false |
+| SENTRY_URL | false |
 | MOCKING | false |
 | OPEN_METEO_BASE_URL | https://api.open-meteo.com |
 
@@ -46,9 +46,28 @@ Environment variables are injected in the app through the `dart-define` build/ru
 [AI tranlator](TODO) tool is used to translate the application. This tool translate the values of the `resources/l10n/weatherapp.json` file with ChatGTP 3.5. 
 
 ```
-python3 arb_translator.py /home/ob/Documents/Projets/weather-app/weatherapp/lib/resources/l10n/weatherapp.json --key XXX -o /home/ob/Documents/Projets/weather-app/weatherapp/lib/resources/l10n
+python3 arb_translator.py [...]/weather-app/weatherapp/lib/resources/l10n/weatherapp.json --key XXX -o [...]/weather-app/weatherapp/lib/resources/l10n
 ```
 
+The application is currently translated to these languages:
+
+* 'es': Spanish
+* 'pt': Portuguese
+* 'fr': French
+* 'de': German
+* 'it': Italian
+* 'ru': Russian
+* 'ja': Japanese
+* 'ko': Korean
+* 'hi': Hindi
+* 'bn': Bengali
+* 'id': Indonesian
+* 'th': Thai
+* 'vi': Vietnamese
+* 'zh': Chinese
+* 'zh-Hans': Simplified Chinese
+
+The app name is translated to these languages for Android. A resource folder with the string values resource file was created for each language (for example: `res/values-ko/strings.xml` for the Korean application name).
 
 ## Models and DTOs
 Models and DTOs are generated with `freezed`.

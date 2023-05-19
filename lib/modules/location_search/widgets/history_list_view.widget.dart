@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ox_sdk/ox_sdk.dart';
+import 'package:weatherapp/extensions/context.extension.dart';
 import 'package:weatherapp/models/history_entry.model.dart';
 import 'package:weatherapp/modules/location_search/notifiers/search_history.notifier.dart';
 import 'package:weatherapp/resources/icons.dart';
@@ -21,11 +22,11 @@ class HistoryListView extends ConsumerWidget {
     return ProviderValueBuilder<List<HistoryEntryModel>, AppException>(
       value: notifier.history,
       emptyDataBuilder: (context) => DefaultEmptyDataWidget(
-        child: Text('No history'),
+        child: Text(context.strings.noHistory),
       ),
       loadingBuilder: (context) => ListTile(
-        leading: OLoader(size: OLoaderSize.small),
-        title: Text('Loading ...'),
+        leading: const OLoader(size: OLoaderSize.small),
+        title: Text(context.strings.loading),
       ),
       dataBuilder: (context, entries) => ListView(
         physics: const NeverScrollableScrollPhysics(),

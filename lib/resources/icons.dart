@@ -11,4 +11,5 @@ class AppIcons {
   static const location = Icons.place_outlined;
   static const history = Icons.history_outlined;
   static const delete = Icons.highlight_remove_outlined;
+  static const share = Icons.share_outlined;
 }

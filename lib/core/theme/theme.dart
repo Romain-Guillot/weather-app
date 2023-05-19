@@ -106,7 +106,7 @@ final darkTheme = buildTheme(_baseDarkTheme);
 ThemeData buildTheme(ThemeData src) {
   return src.copyWith(
     extensions: extensions,
-    inputDecorationTheme: InputDecorationTheme(),
+    inputDecorationTheme: const InputDecorationTheme(),
     textTheme: GoogleFonts.poppinsTextTheme(src.textTheme).copyWith(
       titleSmall: src.textTheme.titleSmall?.copyWith(
         fontWeight: FontWeight.w500,
