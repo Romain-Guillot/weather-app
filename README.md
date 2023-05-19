@@ -4,27 +4,27 @@
 ## Design
 [Figma](https://www.figma.com/file/i0HMApHyNmWIXojlQDak8v/Weather-App?type=design&node-id=0%3A1&t=f7LaZbs3eOWs5gTS-1)
 
-[Material You]() is being used to develop this app.  
-[flex_color_scheme] package has been used to generate the `ThemeData`.
+[Material Design 3](https://m3.material.io/) is being used to design this app.  
+[flex_color_scheme](https://pub.dev/packages/flex_color_scheme) package has been used to generate the `ThemeData` (especially the color scheme).
 
 ## Flutter version
-FVM is used to manage the Flutter version. See `.fvm/fvm_config.json` to known to Flutter version currently used.
+FVM is used to manage the Flutter version. See `.fvm/fvm_config.json` to known the Flutter version currently used.
 
 
 ## Application structure
 ```
-lib
+- lib
     - core
     - data
-        - open_meteo
-    - entities
     - extensions
+    - models
     - modules
-        - home
-        - settings
     - repositories
     - resources
     - services
+    main.dart
+    env.dart
+    router.dart
 ```
 
 
@@ -38,18 +38,21 @@ Environment variables are injected in the app through the `dart-define` build/ru
 | MOCKING | false |
 | OPEN_METEO_BASE_URL | https://api.open-meteo.com |
 
+Then, these arguments are available through the `Env` class.
+
 
 ## Navigation
-`go_router`
+[`go_router`](https://pub.dev/packages/go_router) package is used to handle the application navigation. It uses a declarative routing system with named routes.
 
 ## Intl
-[AI tranlator](TODO) tool is used to translate the application. This tool translate the values of the `resources/l10n/weatherapp.json` file with ChatGTP 3.5. 
+`AI tranlator` tool is used to translate the application. This tool translate the values of the `resources/l10n/weatherapp.json` file with Open AI API and generate arb files for each supported languages. 
 
+**Usage:**
 ```
 python3 arb_translator.py [...]/weather-app/weatherapp/lib/resources/l10n/weatherapp.json --key XXX -o [...]/weather-app/weatherapp/lib/resources/l10n
 ```
 
-The application is currently translated to these languages:
+Supported languages:
 
 * 'es': Spanish
 * 'pt': Portuguese
@@ -69,6 +72,8 @@ The application is currently translated to these languages:
 
 The app name is translated to these languages for Android. A resource folder with the string values resource file was created for each language (for example: `res/values-ko/strings.xml` for the Korean application name).
 
+The application name is not yet translated for the other platforms.
+
 ## Models and DTOs
 Models and DTOs are generated with `freezed`.
 
@@ -87,22 +92,22 @@ fvm flutter pub run build_runner build --delete-conflicting-outputs
 
 ## State management
 
-[`riverpod`]()
+[`riverpod`](https://riverpod.dev/)
 
 
 ## Assets
 - [Material Symbols](https://fonts.google.com/icons)
 - [Meteocons](https://bas.dev/work/meteocons)
 
-[`spider`]() package is used to generate constant paths from the asset folder.
+[`spider`](https://pub.dev/packages/spider) package is used to generate constant paths from the asset folder.
 
 App icons are registered inside the file `resources\icons.dart`.
 
-[`lottie`] package is used to display the animated icons.
+[`lottie`](https://pub.dev/packages/lottie) package is used to display the animated icons (from the *meteocons* icon library).
 
 
 ## Search history
-`isar`
+[`isar`](https://pub.dev/packages/isar) database is used to store and manage the search history entries.
 
 ## Testing
 No testing yet
